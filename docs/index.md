@@ -43,10 +43,10 @@ $ [sudo] npm install lsd-components
       "@type": "Class",
       "requireElement": "MyComponent",
       "parameters": [
-        { "@id": "MyModule/MyComponent#Name" }
+        { "@id": "MyModule/MyComponent#name" }
       ],
       "constructorArguments": [
-        "elements": [ "MyModule/MyComponent#Name" ]
+        "elements": [ "MyModule/MyComponent#name" ]
       ]
     }
   ]
@@ -66,7 +66,7 @@ The constructor of `MyComponent` takes a single `name` argument.
     "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
     {
       "@vocab": "http://example.org/"
-      "name": "MyModule/MyComponent#Name"
+      "name": "MyModule/MyComponent#name"
     }
   ],
   "@id": "http://example.org/myInstance",
@@ -75,7 +75,7 @@ The constructor of `MyComponent` takes a single `name` argument.
 }
 ```
 
-This configuration is a semantic representation of the instantiation of `MyComponent` with `name = "John"`.
+This configuration is a semantic representation of the instantiation of `MyComponent` with `name` set to `"John"`.
 
 #### 3. Instantiate your component programmatically
 

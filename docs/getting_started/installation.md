@@ -1,5 +1,3 @@
-# Installation
-
 ## Node
 
 Components.js can be installed using npm:

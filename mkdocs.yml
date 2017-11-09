@@ -2,6 +2,12 @@ pages:
   - Home: 'index.md'
   - Getting Started:
     - Installation: 'getting_started/installation.md'
+    - Basics:
+        - Home: 'getting_started/basics/home.md'
+        - Terminology: 'getting_started/basics/terminology.md'
+        - Workflow: 'getting_started/basics/workflow.md'
+        - Exposing Components: 'getting_started/basics/exposing_components.md'
+        - Config Serializations: 'getting_started/basics/config_serializations.md'
 
 site_name: Components.js Documentation
 
