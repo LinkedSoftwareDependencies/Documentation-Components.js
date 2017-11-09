@@ -1,5 +1,7 @@
 pages:
   - Home: 'index.md'
+  - Getting Started:
+    - Installation: 'getting_started/installation.md'
 
 site_name: Components.js Documentation
 
