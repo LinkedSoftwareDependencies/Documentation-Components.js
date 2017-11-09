@@ -3,4 +3,7 @@ pages:
 
 site_name: Components.js Documentation
 
+markdown_extensions:
+  - admonition
+
 theme: readthedocs
