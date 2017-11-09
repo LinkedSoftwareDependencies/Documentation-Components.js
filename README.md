@@ -1,4 +1,5 @@
 # Components.js Documentation
+[![Documentation Status](https://readthedocs.org/projects/documentation-componentsjs/badge/?version=latest)](http://documentation-componentsjs.readthedocs.io/en/latest/?badge=latest)
 
 This repo contains the documentation for [Components.js](https://github.com/LinkedSoftwareDependencies/Components.js),
 and is located at http://documentation-componentsjs.readthedocs.io/.
