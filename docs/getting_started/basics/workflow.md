@@ -42,10 +42,10 @@ The contents of a module file looks as follows:
           ...
         }
     
-    Any other kind of RDF serialization can however be used instead, as explained in TODO.
+    Any other kind of [RDF serialization can however be used instead](./config_serializations/).
 
 The essential values of a module are `@id`, `@type` and `requireName`, which will be explained hereafter.
-All available entries of a module can be found at TODO.
+All available entries of a module can be found [here](../../configuration/modules/).
 
 #### @id
 
@@ -100,7 +100,7 @@ In summary, this config file says that `ex:MyModule` has a component `ex:MyModul
 This component has a single parameter `ex:MyModule/MyComponent#Name`,
 and its values are passed to the first argument of `MyComponent`'s constructor.
 
-Details on all available entries of a component can be found at TODO.
+Details on all available entries of a component can be found at [here](../../configuration/components/).
 
 The contents of this file can be made part of the main module file (such as `components/components.jsonld`),
 but when multiple components are available, separate files for each component should be created.
@@ -148,6 +148,9 @@ that must be instantiated, which is `ex:MyModule/MyComponent` in this case.
 The parameters that were defined by the component in its config file,
 can now be used as keys in the configuration file.
 
+More details on component instantiation and on how to instantiate classes that have no explicit components file
+can be found [here](../../configuration/configurations/).
+
 ### 4. Programatic instantiation
 
 Up until now, modules and components are just defined semantically,
@@ -171,7 +174,7 @@ For instance, a modules file can be registered, which will also automatically re
 await loader.registerModuleResourcesUrl('path/or/url/to/my-module.jsonld');
 ```
 
-All other available registration methods can be found at TODO.
+All other available registration methods can be found at [here](../../loading/registration/).
 
 !!! note
     `loader.registerModuleResourcesUrl`, like most other loader methods, return [promises](https://developers.google.com/web/fundamentals/primers/promises).
@@ -194,4 +197,4 @@ and as second argument a file or URL on which the given component configuration 
 This method resolves to an instance of the given component, as it has been instantiated according to the config file.
 In this example, the `MyComponent` constructor as exported by `my-module` will be called with single argument `"John"`.
 
-All other available instantiation methods can be found at TODO.
+All other available instantiation methods can be found at [here](../../loading/instantiation/).

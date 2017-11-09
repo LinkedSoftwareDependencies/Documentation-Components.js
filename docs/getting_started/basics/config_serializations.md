@@ -1,6 +1,6 @@
 ## Introduction
 
-The examples in this documentation always use JSON-LD for defining module, component and config files.
+The examples in this documentation always use [JSON-LD](https://json-ld.org/) for defining module, component and config files.
 However, Components.js works with [RDF](https://www.w3.org/RDF/) data,
 which means that different RDF serializations can be used as well.
 

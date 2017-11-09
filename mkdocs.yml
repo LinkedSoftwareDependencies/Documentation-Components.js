@@ -8,6 +8,16 @@ pages:
         - Workflow: 'getting_started/basics/workflow.md'
         - Exposing Components: 'getting_started/basics/exposing_components.md'
         - Config Serializations: 'getting_started/basics/config_serializations.md'
+  - Configuration:
+    - General: 'configuration/general.md'
+    - Modules: 'configuration/modules.md'
+    - Components: 'configuration/components.md'
+    - Configurations: 'configuration/configurations.md'
+  - Loading:
+    - General: 'loading/general.md'
+    - Registration: 'loading/registration.md'
+    - Instantiation: 'loading/instantiation.md'
+  - Example: 'example.md'
 
 site_name: Components.js Documentation
 
