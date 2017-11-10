@@ -8,6 +8,8 @@ We encourage JSON-LD to be used for readability, as the JSON-LD context allows f
 
 The RDF serializations that are currently supported are JSON-LD, Turtle, TriG, N-Triples and N-Quads.
 
+More information on configurations can be found [here](../../configuration/general/).
+
 ## Vocabularies
 
 If other serializations are used, the following vocabularies may be required:

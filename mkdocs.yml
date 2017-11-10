@@ -11,7 +11,13 @@ pages:
   - Configuration:
     - General: 'configuration/general.md'
     - Modules: 'configuration/modules.md'
-    - Components: 'configuration/components.md'
+    - Components:
+      - General: 'configuration/components/general.md'
+      - Parameters: 'configuration/components/parameters.md'
+      - Default Values: 'configuration/components/default_values.md'
+      - Inherited Values: 'configuration/components/inherited_values.md'
+      - Object Mapping: 'configuration/components/object_mapping.md'
+      - Entry Collection: 'configuration/components/entry_collection.md'
     - Configurations: 'configuration/configurations.md'
   - Loading:
     - General: 'loading/general.md'

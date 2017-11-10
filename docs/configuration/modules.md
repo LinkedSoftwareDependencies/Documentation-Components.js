@@ -1,12 +1,12 @@
-Modules can be configured using the following elements:
+Modules can be configured using the following type and predicates:
 
-**Types**
+## Types
 
 | JSON-LD Shortcut | URI                  | Description |
 | ---------------- | -------------------- | ----------- |
 | Module           | oo:Module            | A module that can contain components. |
 
-**Predicates**
+## Predicates
 
 | JSON-LD Shortcut     | URI                     | Domain       → Range                        | Description |
 | -------------------- | ----------------------- | ------------------------------------------- | ----------- |
@@ -15,7 +15,7 @@ Modules can be configured using the following elements:
 | requireName          | doap:name               | oo:Module    → xsd:string                   | The name of the npm package as defined in the `package.json` file. |
 | comment              | rdfs:comment            | ?            → xsd:string                   | The comment of a thing. |
 
-**Example**
+## Example
 
 A module can be defined as follows:
 ```json
