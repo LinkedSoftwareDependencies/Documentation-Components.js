@@ -4,6 +4,8 @@
 This repo contains the documentation for [Components.js](https://github.com/LinkedSoftwareDependencies/Components.js),
 and is located at http://documentation-componentsjs.readthedocs.io/.
 
+This documentation can be viewed locally by running `mkdocs serve`.
+
 ## License
 This documentation is written by [Ruben Taelman](http://www.rubensworks.net/),
 copyrighted by [Ghent University – imec](http://idlab.ugent.be/)
