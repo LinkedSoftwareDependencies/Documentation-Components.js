@@ -23,7 +23,7 @@ pages:
       - Defined: 'configuration/configurations/defined.md'
       - Undefined: 'configuration/configurations/undefined.md'
   - Loading:
-    - General: 'loading/general.md'
+    - Loader: 'loading/loader.md'
     - Registration: 'loading/registration.md'
     - Instantiation: 'loading/instantiation.md'
   - Example: 'example.md'
