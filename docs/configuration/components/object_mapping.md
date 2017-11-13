@@ -48,7 +48,7 @@ Config:
   ...
   "@type": "MyModule/MyComponent1",
   "ex:MyModule/MyComponent#param1": "A",
-  "ex:MyModule/MyComponent#paramB": "B"
+  "ex:MyModule/MyComponent#param2": "B"
 }
 ```
 Instantiating this will invoke `MyComponent1("A", "B")`.
@@ -80,7 +80,7 @@ Config:
   ...
   "@type": "MyModule/MyComponent1",
   "ex:MyModule/MyComponent#param1": "A",
-  "ex:MyModule/MyComponent#paramB": "B"
+  "ex:MyModule/MyComponent#param2": "B"
 }
 ```
 Instantiating this will invoke `MyComponent1(["A", "B"])`.
@@ -118,7 +118,7 @@ Config:
   ...
   "@type": "MyModule/MyComponent2",
   "ex:MyModule/MyComponent2#param1": "A",
-  "ex:MyModule/MyComponent2#paramB": "B"
+  "ex:MyModule/MyComponent2#param2": "B"
 }
 ```
 Instantiating this will invoke `MyComponent2({ param1: "A", param2: "B" })`.
@@ -179,7 +179,7 @@ Config:
   ...
   "@type": "MyModule/MyComponent3",
   "ex:MyModule/MyComponent3#param1": "A",
-  "ex:MyModule/MyComponent3#paramB": "B"
+  "ex:MyModule/MyComponent3#param2": "B"
 }
 ```
 Instantiating this will invoke:

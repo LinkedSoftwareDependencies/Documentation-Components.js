@@ -18,7 +18,10 @@ pages:
       - Inherited Values: 'configuration/components/inherited_values.md'
       - Object Mapping: 'configuration/components/object_mapping.md'
       - Entry Collection: 'configuration/components/entry_collection.md'
-    - Configurations: 'configuration/configurations.md'
+    - Configurations:
+      - General: 'configuration/configurations/general.md'
+      - Defined: 'configuration/configurations/defined.md'
+      - Undefined: 'configuration/configurations/undefined.md'
   - Loading:
     - General: 'loading/general.md'
     - Registration: 'loading/registration.md'
