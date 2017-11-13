@@ -14,7 +14,7 @@ Components can be configured using the following types and predicates:
 | JSON-LD Shortcut     | URI                     | Domain           → Range                        | Description |
 | -------------------- | ----------------------- | ----------------------------------------------- | ----------- |
 | parameters           | oo:parameter            | oo:Component     → oo:Parameter                 | Attaches one or more parameters to a component. |
-| constructorArguments | oo:constructorArguments | oo:Component     → rdf:list of om:ObjectMapping | Defines the list of constructor arguments of a given component. These arguments must be ObjectMappings. |
+| constructorArguments | oo:constructorArguments | oo:Component     → rdf:list of om:ObjectMapping | Defines the list of constructor arguments of a given component. These arguments must be ObjectMappings. If this is not provided, the parameter values are passed to the constructor as a raw hash. |
 | extends              | rdfs:subClassOf         | oo:Component     → oo:Component                 | Say that a certain component extends from another component, which will inherit all its parameters. |
 | requireElement       | oo:componentPath        | oo:Component     → xsd:string                   | The object path to a module delimited by `.`. For example, the path to element `X` in object `{ a: { b: { X: { ... } } } }` is `a.b.X`. |
 
@@ -78,4 +78,44 @@ This can not be instantiated further, but it can be used by other component conf
   "requireElement": "path.to.MyInstance",
   "comment": "This component is an instance."
 }
+```
+
+## Example: Component without Constructor Arguments
+
+`MyModule/MyComponentRaw` is a component without constructor arguments.
+When invoked with a set of parameter assignments,
+the constructor will be called with a single hash,
+which contains a mapping of the parameter ids to their values.
+
+```json
+{
+  ...
+  "@id": "MyModule/MyComponentRaw",
+  "@type": "Class",
+  "extends": "MyModule/MyAbstractComponent",
+  "requireElement": "path.to.MyComponent",
+  "comment": "This is an instantiatable component.",
+  "parameters": [
+    { "@id": "MyModule/MyComponentRaw#param1" },
+    { "@id": "MyModule/MyComponentRaw#param2" }
+  ]
+}
+```
+
+Config:
+```json
+{
+  ...
+  "@type": "MyModule/MyComponentRaw",
+  "ex:MyModule/MyComponent#param1": "A",
+  "ex:MyModule/MyComponent#param2": "B",
+  "ex:MyModule/MyComponent#param2": "C"
+}
+```
+Instantiating this will invoke:
+```json
+MyComponentRaw({
+  "http://example.org/MyModule/MyComponent#param1": [ "A" ],
+  "http://example.org/MyModule/MyComponent#param2": [ "B", "C" ]
+})
 ```
