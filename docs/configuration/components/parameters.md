@@ -14,7 +14,24 @@ Parameters define what kind of values can be used to instantiate a component wit
 | JSON-LD Shortcut     | URI                     | Domain           → Range                        | Description |
 | -------------------- | ----------------------- | ----------------------------------------------- | ----------- |
 | unique               | oo:uniqueValue          | oo:Parameter     → xsd:boolean                  | If set to true, only a single value for the given parameter in a component instance can be set. Default is false. |
-| range                | rdfs:range              | oo:Parameter     → ?                            | Defines the range of a certain parameter, such as xsd:boolean or xsd:string. |
+| range                | rdfs:range              | oo:Parameter     → ?                            | Defines the range of a certain parameter, such as `xsd:boolean` or `xsd:string`. |
+
+!!! note
+    Components.js has the ability to automatically convert specific parameter ranges to certain JavaScript datatypes.
+    Currently, the following conversions of literals are supported:
+    
+    | Range | JavaScript |
+    | ----- | ---------- |
+    | `xsd:boolean` | `boolean` |
+    | `xsd:integer` | `number` |
+    | `xsd:number` | `number` |
+    | `xsd:int` | `number` |
+    | `xsd:byte` | `number` |
+    | `xsd:long` | `number` |
+    | `xsd:float` | `float` |
+    | `xsd:decimal` | `float` |
+    | `xsd:double` | `float` |
+    | All others | `string` |
 
 ## Example: boolean parameter
 
