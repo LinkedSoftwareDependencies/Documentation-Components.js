@@ -1,0 +1,42 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/contexts/documentation-components.jsonld",
+  "@id": "npmd:documentation-components",
+  "components": [
+    {
+      "@id": "dc:PageServer",
+      "@type": "Class",
+      "requireElement": "PageServer",
+      "comment": "Servers pages via HTTP",
+      "parameters": [
+        {
+          "@id": "dc:PageServer/page",
+          "comment": "The page to log",
+          "range": "dc:Page",
+          "unique": true,
+          "required": true
+        },
+        {
+          "@id": "dc:PageServer/port",
+          "comment": "The port to serve on",
+          "range": "xsd:integer",
+          "unique": true,
+          "default": 8080
+        }
+      ],
+      "constructorArguments": [
+        {
+          "fields": [
+            {
+              "keyRaw": "page",
+              "value": "dc:PageServer/page"
+            },
+            {
+              "keyRaw": "port",
+              "value": "dc:PageServer/port"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

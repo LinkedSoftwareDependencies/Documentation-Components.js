@@ -1,0 +1,10 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/contexts/documentation-components.jsonld",
+  "@id": "urn:components:documentation",
+  "@type": "PageServer",
+  "servePage": {
+    "@type": "MarkdownPage",
+    "markdownPath": "docs/index.md"
+  },
+  "servePort": 8080
+}

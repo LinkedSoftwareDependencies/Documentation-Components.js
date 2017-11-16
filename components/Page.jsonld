@@ -1,0 +1,11 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/contexts/documentation-components.jsonld",
+  "@id": "npmd:documentation-components",
+  "components": [
+    {
+      "@id": "dc:Page",
+      "@type": "AbstractClass",
+      "comment": "An abstract page component"
+    }
+  ]
+}

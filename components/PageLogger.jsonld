@@ -1,0 +1,24 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/contexts/documentation-components.jsonld",
+  "@id": "npmd:documentation-components",
+  "components": [
+    {
+      "@id": "dc:PageLogger",
+      "@type": "Class",
+      "requireElement": "PageLogger",
+      "comment": "Logs pages to the console.",
+      "parameters": [
+        {
+          "@id": "dc:PageLogger/page",
+          "comment": "The page to log",
+          "range": "dc:Page",
+          "unique": true,
+          "required": true
+        }
+      ],
+      "constructorArguments": [
+        { "@id": "dc:PageLogger/page" }
+      ]
+    }
+  ]
+}

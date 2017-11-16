@@ -1,0 +1,32 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/contexts/documentation-components.jsonld",
+  "@id": "npmd:documentation-components",
+  "components": [
+    {
+      "@id": "dc:MarkdownPage",
+      "@type": "Class",
+      "extends": "dc:Page",
+      "requireElement": "MarkdownPage",
+      "comment": "An page that is built from Markdown",
+      "parameters": [
+        {
+          "@id": "dc:MarkdownPage/path",
+          "comment": "Path to the Markdown source of this page",
+          "range": "xsd:string",
+          "unique": true,
+          "required": true
+        }
+      ],
+      "constructorArguments": [
+        {
+          "fields": [
+            {
+              "keyRaw": "path",
+              "value": "dc:MarkdownPage/path"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

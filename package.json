@@ -1,0 +1,23 @@
+{
+  "name": "documentation-components",
+  "version": "1.0.0",
+  "description": "Components.js documentation that can be self-instantiated.",
+  "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/documentation-components",
+  "lsd:components": "components/components.jsonld",
+  "lsd:contexts": {
+    "https://linkedsoftwaredependencies.org/contexts/documentation-components.jsonld": "components/context.jsonld"
+  },
+  "bin": {
+    "serve": "./bin/serve.js"
+  },
+  "main": "index.js",
+  "repository": "git@github.com:LinkedSoftwareDependencies/Documentation-Components.js.git",
+  "author": "Ruben Taelman <ruben.taelman@ugent.be>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "lsd-components": "^1.0.4",
+    "remark": "^8.0.0",
+    "remark-html": "^6.0.1"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/contexts/documentation-components.jsonld",
+  "@id": "urn:components:documentation",
+  "@type": "PageLogger",
+  "logPage": {
+    "@type": "MarkdownPage",
+    "markdownPath": "docs/index.md"
+  }
+}

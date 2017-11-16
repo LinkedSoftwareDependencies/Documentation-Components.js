@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
+    {
+      "npmd": "https://linkedsoftwaredependencies.org/bundles/npm/",
+      "dc": "npmd:documentation-components/",
+
+      "Page": "dc:Page",
+      
+      "PageLogger": "dc:PageLogger",
+      "logPage": "dc:PageLogger/page",
+      
+      "PageServer": "dc:PageServer",
+      "servePage": "dc:PageServer/page",
+      "servePort": "dc:PageServer/port",
+      
+      "MarkdownPage": "dc:MarkdownPage",
+      "markdownPath": "dc:MarkdownPage/path"
+    }
+  ]
+}
