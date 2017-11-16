@@ -1,4 +1,5 @@
-As an example, this documentation has been made self-instantiatable using Components.js
+As an example, this documentation has been made self-instantiatable using Components.js.
+This makes it possible to view the HTML-version of any page to the console, or serve it via HTTP on a local webserver.
 
 The necessary files for this instantiation are available on [the GitHub repository of this documentation](https://github.com/LinkedSoftwareDependencies/Documentation-Components.js).
 
