@@ -1,4 +1,4 @@
-The Loader offers three different for registering modules and their components:
+The Loader offers three different ways for registering modules and their components:
 
 1. By automatic NPM module scanning
 2. By URL
