@@ -4,6 +4,8 @@ This is the documentation for [Components.js], a semantic dependency injection f
 
 Contribute to this documentation on [GitHub].
 
+_[This documentation itself is instantiable using Components.js!](./example/)_
+
 ## Introduction
 
 Components.js is a [dependency injection] framework for JavaScript applications.

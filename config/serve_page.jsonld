@@ -5,6 +5,5 @@
   "servePage": {
     "@type": "MarkdownPage",
     "markdownPath": "docs/index.md"
-  },
-  "servePort": 8080
+  }
 }
