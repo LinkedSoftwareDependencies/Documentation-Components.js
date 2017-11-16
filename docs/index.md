@@ -34,21 +34,21 @@ $ [sudo] npm install lsd-components
 {
   "@context": [
     "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
-    { "@vocab": "http://example.org/" }
+    { "ex": "http://example.org/" }
   ],
-  "@id": "MyModule",
+  "@id": "ex:MyModule",
   "@type": "Module",
   "requireName": "my-module",
   "components": [
     {
-      "@id": "MyModule/MyComponent",
+      "@id": "ex:MyModule/MyComponent",
       "@type": "Class",
       "requireElement": "MyComponent",
       "parameters": [
-        { "@id": "MyModule/MyComponent#name" }
+        { "@id": "ex:MyModule/MyComponent#name", "unique": true }
       ],
       "constructorArguments": [
-        "elements": [ "MyModule/MyComponent#name" ]
+        { "@id": "ex:MyModule/MyComponent#name" }
       ]
     }
   ]
@@ -67,12 +67,12 @@ The constructor of `MyComponent` takes a single `name` argument.
   "@context": [
     "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
     {
-      "@vocab": "http://example.org/"
-      "name": "MyModule/MyComponent#name"
+      "ex": "http://example.org/",
+      "name": "ex:MyModule/MyComponent#name"
     }
   ],
   "@id": "http://example.org/myInstance",
-  "@type": "MyModule/MyComponent",
+  "@type": "ex:MyModule/MyComponent",
   "name": "John"
 }
 ```
@@ -82,17 +82,23 @@ This configuration is a semantic representation of the instantiation of `MyCompo
 #### 3. Instantiate your component programmatically
 
 ```javascript
+...
 const Loader = require('lsd-components').Loader;
 
 const loader = new Loader();
 await loader.registerModuleResourcesUrl('path/or/url/to/my-module.jsonld');
 const myComponent = await loader.instantiateFromUrl(
     'http://example.org/myInstance', 'path/or/url/to/config-my-component.jsonld');
+...
 ```
 
 `myComponent` is an instance of type `MyComponent`, as defined in the config file.
 
 Please refer to the remainder of this documentation for more details on each of these parts.
+
+!!! note
+    A full stand-alone version of this [example](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/home/quick_start),
+    and all other examples in this documentation be found on a dedicated [GitHub repository](https://github.com/LinkedSoftwareDependencies/Examples-Components.js).
 
 [Components.js]: https://github.com/LinkedSoftwareDependencies/Components.js
 [GitHub]: https://github.com/LinkedSoftwareDependencies/Documentation-Components.js
