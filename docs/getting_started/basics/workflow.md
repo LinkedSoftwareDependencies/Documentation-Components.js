@@ -160,12 +160,12 @@ However, in order to instantiate such declarative components programamatically,
 Components.js must be installed as a dependency.
 
 !!! note
-    The npm package name of Components.js is `lsd-components`.
+    The npm package name of Components.js is `componentsjs`.
 
 Components.js exposes a `Loader` module, which is responsible for loading modules, components and instantiating them.
 A new loader instance is simply created as follows:
 ```javascript
-const Loader = require('lsd-components').Loader;
+const Loader = require('componentsjs').Loader;
 const loader = new Loader();
 ```
 

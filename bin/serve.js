@@ -6,7 +6,7 @@ if (argv.length < 1 || /^--?h(elp)?$/.test(argv[0])) {
 
 var configUrl = argv[0];
 
-var loader = new (require('lsd-components').Loader)();
+var loader = new (require('componentsjs').Loader)();
 loader.registerAvailableModuleResources()
   .then(function()         { return loader.instantiateFromUrl('urn:components:documentation', configUrl); })
   .then(function(instance) { return instance.run(); })

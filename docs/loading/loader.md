@@ -9,7 +9,7 @@ and different ways to [instantiate](./instantiation/) these components from conf
 
 This is an example of registering and instantiating by URL:
 ```javascript
-const Loader = require('lsd-components').Loader;
+const Loader = require('componentsjs').Loader;
 
 const loader = new Loader();
 await loader.registerModuleResourcesUrl('path/or/url/to/my-module.jsonld');

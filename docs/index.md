@@ -24,7 +24,7 @@ This software is aimed for developers who want to build _modular_ and _easily co
 
 Components.js can be installed using npm:
 ```bash
-$ [sudo] npm install lsd-components
+$ [sudo] npm install componentsjs
 ```
 
 #### 1. Define your module and its components
@@ -83,7 +83,7 @@ This configuration is a semantic representation of the instantiation of `MyCompo
 
 ```javascript
 ...
-const Loader = require('lsd-components').Loader;
+const Loader = require('componentsjs').Loader;
 
 const loader = new Loader();
 await loader.registerModuleResourcesUrl('path/or/url/to/my-module.jsonld');

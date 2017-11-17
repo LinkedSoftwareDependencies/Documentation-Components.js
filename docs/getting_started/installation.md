@@ -2,13 +2,13 @@
 
 Components.js can be installed using npm:
 ```bash
-$ [sudo] npm install lsd-components
+$ [sudo] npm install componentsjs
 ```
 
 Or with any other Node package manager, such as Yarn:
 
 ```bash
-$ [sudo] yarn add lsd-components
+$ [sudo] yarn add componentsjs
 ```
 
 ## GitHub
