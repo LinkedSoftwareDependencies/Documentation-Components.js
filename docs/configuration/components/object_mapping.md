@@ -18,7 +18,8 @@ Constructor arguments use _object mappings_ to define how to convert parameter v
 | elements             | om:elements             | oo:ArrayMapping  → om:ArrayMappingElements      | Sets the list of array mapping elements of an array mapping. |
 | key, keyRaw          | om:fieldName            | oo:ObjectMappingEntry → ?                       | Sets the key of an object mapping entry. This can be a literal or a URI. |
 | value                | om:fieldValue           | oo:ObjectMappingEntry → ?                       | Sets the value of an object mapping entry to another object mapping object.
-| valueRaw             | om:fieldValueRaw        | oo:ObjectMappingEntry → ?                       | Sets the value of an object mapping entry to the given literal. |
+| valueRaw             | om:fieldValue           | oo:ObjectMappingEntry → ?                       | Sets the value of an object mapping entry to the given literal. |
+| valueRawReference    | om:fieldValueRaw        | oo:ObjectMappingEntry → ?                       | Sets the value of an object mapping entry to the given parameter, which value is a URI, but should be interpreted (and converted) as a literal. |
 | [collectEntries](./entry_collection/)       | om:collectsEntriesFrom  | oo:ObjectMappingEntry → ?                       | Indicate that this object mapping entry should be instantiated for all occurences of the given parameter. |
 
 !!! note
