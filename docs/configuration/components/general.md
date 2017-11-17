@@ -130,3 +130,5 @@ MyComponentRaw({
   "http://example.org/MyModule/MyComponent#param2": [ "B", "C" ]
 })
 ```
+
+[_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/configuration/components/general)

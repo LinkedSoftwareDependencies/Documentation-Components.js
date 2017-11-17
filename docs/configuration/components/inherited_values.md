@@ -67,3 +67,5 @@ Config:
 ```
 
 When `ex:myComponent1` and `ex:myComponent2` are instantiated, `ex:myComponent2` will inherit the value `"SOMETHING"` for its `ex:MyModule/MyComponent2#param1` parameter.
+
+[_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/configuration/components/inherited_values)

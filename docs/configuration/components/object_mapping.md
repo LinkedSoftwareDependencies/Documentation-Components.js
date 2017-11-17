@@ -197,3 +197,5 @@ MyComponent({
   }
 })
 ```
+
+[_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/configuration/components/object_mapping)

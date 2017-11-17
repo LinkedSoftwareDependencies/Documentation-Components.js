@@ -96,3 +96,5 @@ For `ex:MyModule/MyComponent#param2`, instead of creating a new instantiation, i
 !!! note
     Component instantiations can not containg self-references.
     For example, a component instance can have a reference to itself in one of its parameters, or its children.
+
+[_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/configuration/configurations/defined)

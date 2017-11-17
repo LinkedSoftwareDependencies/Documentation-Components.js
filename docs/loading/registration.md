@@ -84,3 +84,5 @@ The promise will resolve when the stream has been fully consumed and all discove
 
 !!! note
     In the future, triples will be accepted according to the [RDFJS specification](https://github.com/rdfjs/representation-task-force/blob/master/interface-spec.md#triple).
+
+[_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/loading/registration)

@@ -199,3 +199,5 @@ This method resolves to an instance of the given component, as it has been insta
 In this example, the `MyComponent` constructor as exported by `my-module` will be called with single argument `"John"`.
 
 All other available instantiation methods can be found at [here](../../loading/instantiation/).
+
+[_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/getting_started/basics/workflow)

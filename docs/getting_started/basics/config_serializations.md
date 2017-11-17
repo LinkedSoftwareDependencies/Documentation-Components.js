@@ -41,3 +41,5 @@ This can be declaratively instantiated as follows:
 <http://example.org/myInstance> a <http://example.org/MyModule/MyComponent>;
   <http://example.org/MyModule/MyComponent#name> "John".
 ```
+
+[_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/getting_started/basics/config_serializations)

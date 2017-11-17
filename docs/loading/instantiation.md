@@ -28,3 +28,5 @@ Note that the referenced components must be [registered](../registration/) befor
 Similar to [registration by triple stream](../registration/#registering-by-triple-stream), components can also be instantiated by triple stream.
 
 This can be done by calling: `await loader.getConfigConstructorFromStream('http://example.org/MyInstance', myTripleStream)`.
+
+[_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/loading/instantiation)

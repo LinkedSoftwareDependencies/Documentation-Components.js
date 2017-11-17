@@ -17,6 +17,8 @@ const myComponent = await loader.instantiateFromUrl(
     'http://example.org/myInstance', 'path/or/url/to/config-my-component.jsonld');
 ```
 
+[_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/loading/loader)
+
 !!! note
     Loader has a strict _registration_ and _instantiation_ phase.
     This means that all registrations should happen _before_ instantiations.

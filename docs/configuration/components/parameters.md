@@ -46,3 +46,5 @@ Parameters define what kind of values can be used to instantiate a component wit
   "range": "xsd:boolean"
 }
 ```
+
+[_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/configuration/components/parameters)

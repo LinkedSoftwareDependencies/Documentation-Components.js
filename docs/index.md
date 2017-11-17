@@ -94,6 +94,8 @@ const myComponent = await loader.instantiateFromUrl(
 
 `myComponent` is an instance of type `MyComponent`, as defined in the config file.
 
+[_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/home/quick_start)
+
 Please refer to the remainder of this documentation for more details on each of these parts.
 
 !!! note
