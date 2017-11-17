@@ -84,11 +84,12 @@ Following the module from last section, the contents of a components file looks 
         {
           "@id": "ex:MyModule/MyComponent#name",
           "comment": "A name",
-          "range": "xsd:string"
+          "range": "xsd:string",
+          "unique": true
         }
       ],
       "constructorArguments": [
-        "elements": [ "ex:MyModule/MyComponent#name" ]
+        { "@id": "ex:MyModule/MyComponent#name" }
       ]
     }
   ]

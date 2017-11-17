@@ -27,7 +27,7 @@ The constructor arguments are not automatically inherited, but these can be exte
 ```json
 {
   ...
-  "@id": "MyModule/MyAbstractComponent",
+  "@id": "ex:MyModule/MyAbstractComponent",
   "@type": "AbstractClass",
   "requireElement": "path.to.MyAbstractComponent",
   "comment": "This is an abstract component that is not instantiatable.",
@@ -35,11 +35,21 @@ The constructor arguments are not automatically inherited, but these can be exte
     { ... }
   ],
   "constructorArguments": [
-    "@id": "MyModule/MyAbstractComponent#constructorArguments",
-    ...
+    {
+      "@id": "ex:MyModule/MyAbstractComponent#constructorArguments",
+      "@type": "om:ObjectMapping"
+      ...
+    }
   ]
 }
 ```
+
+!!! note
+    Constructor arguments that do not extend another object mapping _and_ do not define any fields themselves
+    must have a `@type` of `om:ObjectMapping`.
+
+    This is so that Components.js is able to derive that the user has made no error in its component definition
+    and is certain to create an empty constructor arguments object.
 
 ## Example: Component Extension
 
@@ -50,17 +60,19 @@ In this case, it extends the constructor arguments of its parent, and can potent
 ```json
 {
   ...
-  "@id": "MyModule/MyComponent",
+  "@id": "ex:MyModule/MyComponent",
   "@type": "Class",
-  "extends": "MyModule/MyAbstractComponent",
+  "extends": "ex:MyModule/MyAbstractComponent",
   "requireElement": "path.to.MyComponent",
   "comment": "This is an instantiatable component.",
   "parameters": [
     { ... }
   ],
   "constructorArguments": [
-    "extends": "MyModule/MyAbstractComponent#constructorArguments"
-    ...
+    {
+      "extends": "ex:MyModule/MyAbstractComponent#constructorArguments"
+      ...
+    }
   ]
 }
 ```
@@ -73,7 +85,7 @@ This can not be instantiated further, but it can be used by other component conf
 ```json
 {
   ...
-  "@id": "MyModule/MyComponentInstance",
+  "@id": "ex:MyModule/MyComponentInstance",
   "@type": "Instance",
   "requireElement": "path.to.MyInstance",
   "comment": "This component is an instance."
@@ -90,14 +102,14 @@ which contains a mapping of the parameter ids to their values.
 ```json
 {
   ...
-  "@id": "MyModule/MyComponentRaw",
+  "@id": "ex:MyModule/MyComponentRaw",
   "@type": "Class",
-  "extends": "MyModule/MyAbstractComponent",
+  "extends": "ex:MyModule/MyAbstractComponent",
   "requireElement": "path.to.MyComponent",
   "comment": "This is an instantiatable component.",
   "parameters": [
-    { "@id": "MyModule/MyComponentRaw#param1" },
-    { "@id": "MyModule/MyComponentRaw#param2" }
+    { "@id": "ex:MyModule/MyComponentRaw#param1" },
+    { "@id": "ex:MyModule/MyComponentRaw#param2" }
   ]
 }
 ```
@@ -106,10 +118,9 @@ Config:
 ```json
 {
   ...
-  "@type": "MyModule/MyComponentRaw",
-  "ex:MyModule/MyComponent#param1": "A",
-  "ex:MyModule/MyComponent#param2": "B",
-  "ex:MyModule/MyComponent#param2": "C"
+  "@type": "ex:MyModule/MyComponentRaw",
+  "ex:MyModule/MyComponentRaw#param1": "A",
+  "ex:MyModule/MyComponentRaw#param2": [ "B", "C" ]
 }
 ```
 Instantiating this will invoke:

@@ -32,14 +32,12 @@ For example, this is a simple component definition in Turtle:
 
 <http://example.org/MyModule/MyComponent> a oo:Class;
   oo:componentPath "MyComponent";
-  oo:parameter <http://example.org/MyModule/MyComponent#name>,
-  oo:constructorArguments ([
-    rdf:value <http://example.org/MyModule/MyComponent#name>. 
-  ]).
+  oo:parameter <http://example.org/MyModule/MyComponent#name>;
+  oo:constructorArguments ( <http://example.org/MyModule/MyComponent#name> ).
 ```
 
 This can be declaratively instantiated as follows:
 ```text
-<http://example.org/myComponent> a <http://example.org/MyModule/MyComponent>;
+<http://example.org/myInstance> a <http://example.org/MyModule/MyComponent>;
   <http://example.org/MyModule/MyComponent#name> "John".
 ```

@@ -27,7 +27,7 @@ Parameters can have default values when parameters are not given an explicit val
 ```json
 {
   ...
-  "@id": "MyModule/MyComponent#MyParam1",
+  "@id": "ex:MyModule/MyComponent#MyParam1",
   "default": "this is the default value"
 }
 ```
@@ -38,9 +38,9 @@ Parameters can have default values when parameters are not given an explicit val
 ```json
 {
   ...
-  "@id": "MyModule/MyComponent#MyParam2",
+  "@id": "ex:MyModule/MyComponent#MyParam2",
   "defaultScoped": {
-    "defaultScope": "MyModule/MyComponent",
+    "defaultScope": "ex:MyModule/MyComponent",
     "defaultScopedValue": "this is the default value for MyComponent"
   }
 }
@@ -52,14 +52,14 @@ Parameters can have default values when parameters are not given an explicit val
 ```json
 {
   ...
-  "@id": "MyModule/MyComponent#MyParam3",
+  "@id": "ex:MyModule/MyComponent#MyParam3",
   "defaultScoped": [
     {
-      "defaultScope": "MyModule/MyComponent1",
+      "defaultScope": "ex:MyModule/MyComponent1",
       "defaultScopedValue": "this is the default value for MyComponent1"
     },
     {
-      "defaultScope": "MyModule/MyComponent2",
+      "defaultScope": "ex:MyModule/MyComponent2",
       "defaultScopedValue": "this is the default value for MyComponent2"
     }
   ],

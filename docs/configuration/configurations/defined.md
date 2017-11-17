@@ -31,9 +31,8 @@ The following instantiation (i.e. config) can be defined:
 {
   ...
   "@type": "ex:MyModule/MyComponent1",
-  "ex:MyModule/MyComponent#param1": "A",
-  "ex:MyModule/MyComponent#param1": "B",
-  "ex:MyModule/MyComponent#param2": "C"
+  "ex:MyModule/MyComponent1#param1": [ "A", "B" ],
+  "ex:MyModule/MyComponent1#param2": "C"
 }
 ```
 
@@ -55,11 +54,10 @@ For example:
 {
   ...
   "@type": "ex:MyModule/MyComponent1",
-  "ex:MyModule/MyComponent#param1": "A",
-  "ex:MyModule/MyComponent#param1": "B",
-  "ex:MyModule/MyComponent#param2": {
+  "ex:MyModule/MyComponent1#param1": [ "A", "B" ],
+  "ex:MyModule/MyComponent1#param2": {
     "@type": "ex:MyModule/MyComponent1",
-    "ex:MyModule/MyComponent#param1": "A"
+    "ex:MyModule/MyComponent1#param1": "A"
   }
 }
 ```
@@ -80,12 +78,12 @@ For example:
   ...
   "@id": "ex:myRootComponent",
   "@type": "ex:MyModule/MyComponent1",
-  "ex:MyModule/MyComponent#param1": {
-    "@id": "ex:myComponent1"
+  "ex:MyModule/MyComponent1#param1": {
+    "@id": "ex:myComponent1",
     "@type": "ex:MyModule/MyOtherComponent",
-    "ex:MyModule/MyOtherComponent#param1": "A"
+    "ex:MyModule/MyOtherComponent1#param1": "A"
   },
-  ex:MyModule/MyComponent#param2": {
+  "ex:MyModule/MyComponent1#param2": {
     "@id": "ex:myComponent1"
   }
 }

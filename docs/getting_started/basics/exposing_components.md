@@ -18,7 +18,7 @@ For example:
   "name": "my-plugin",
   ...
   "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/my-plugin",
-  "lsd:components": "components/components.jsonld"
+  "lsd:components": "components/components.jsonld",
   ...
 }
 ```

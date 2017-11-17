@@ -40,7 +40,7 @@ Parameters define what kind of values can be used to instantiate a component wit
 ```json
 {
   ...
-  "@id": "MyModule/MyComponent#MyParam",
+  "@id": "ex:MyModule/MyComponent#MyParam",
   "comment": "Some parameter that only accepts boolean values",
   "unique": true,
   "range": "xsd:boolean"

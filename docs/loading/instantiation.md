@@ -13,10 +13,9 @@ This returns a promise that resolves to the newly constructed instance.
 This will for example instantiate the configuration at `http://example.org/my/config.jsonld` containing:
 ```json
 {
-  "@id": "http://example.org/MyInstance",
-  "@type": "http://example.org/MyComponent",
-  "http://example.org/MyComponent#param1": "some value"
-  ...
+  "@id": "http://example.org/myInstance",
+  "@type": "ex:MyModule/MyComponent",
+  "ex:MyModule/MyComponent#name": "John"
 }
 ```
 This requires the component `http://example.org/MyComponent` to be [registered](../registration/) via its module.

@@ -15,19 +15,23 @@ and the predicate to pointed by `value` will be set as the value for this entry.
 
 ## Example
 
-A constructor mapping of component `c` with parameter `p` can be defined as follows:
+A constructor mapping of component `ex:MyModule/MyComponent` with parameter `ex:MyModule/MyComponent#MyParam` can be defined as follows:
 
 ```json
 {
-  "@id": "c",
-  ...
+  "@id": "ex:MyModule/MyComponent",
+  "@type": "Class",
+  "requireElement": "MyComponent",
+  "parameters": [
+    { "@id": "ex:MyModule/MyComponent#MyParam" }
+  ],
   "constructorArguments": [
     {
       "fields": [
         {
-          "collectEntries": "p",
-          "key": "a",
-          "value": "b"
+          "collectEntries": "ex:MyModule/MyComponent#MyParam",
+          "key": "ex:a",
+          "value": "ex:b"
         }
       ]
     }
@@ -37,11 +41,11 @@ A constructor mapping of component `c` with parameter `p` can be defined as foll
 Config:
 ```json
 {
-  "@type": "c",
-  "p": [
-    { "a": "A1", "b": "B1" },
-    { "a": "A2", "b": "B2" },
-    { "a": "A3", "b": "B3" }
+  "@type": "ex:MyModule/MyComponent",
+  "ex:MyModule/MyComponent#MyParam": [
+    { "ex:a": "A1", "ex:b": "B1" },
+    { "ex:a": "A2", "ex:b": "B2" },
+    { "ex:a": "A3", "ex:b": "B3" }
   ]
 }
 ```

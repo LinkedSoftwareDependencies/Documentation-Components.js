@@ -21,7 +21,7 @@ A module can be defined as follows:
 ```json
 {
   "@context": "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
-  "@id": "MyModule",
+  "@id": "http://example.org/MyModule",
   "@type": "Module",
   "requireName": "my-module",
   "comment": "This is my awesome module!",

@@ -17,7 +17,7 @@ Config:
 {
   ...
   "requireName": "my-module",
-  "requireElement": "modules.Module1"
+  "requireElement": "modules.Module1",
   "arguments": [
     { "valueRaw": "ABC" }
   ]
@@ -33,18 +33,24 @@ Config:
 {
   ...
   "requireName": "my-module",
-  "requireElement": "modules.Module2"
+  "requireElement": "modules.Module2",
   "arguments": [
     { "valueRaw": "1" },
     { "valueRaw": "2" },
     {
-      "key": "a"
-      "valueRaw": {
+      "fields": [
         {
-          "key": "b"
-          "valueRaw": "c"
+          "keyRaw": "a",
+          "value": {
+            "fields": [
+              {
+                "keyRaw": "b",
+                "valueRaw": "c"
+              }
+            ]
+          }
         }
-      }
+      ]
     }
   ]
 }
@@ -59,12 +65,12 @@ Config:
 {
   ...
   "requireName": "my-module",
-  "requireElement": "modules.Module1"
+  "requireElement": "modules.Module1",
   "arguments": [
     {
       "value": {
         "requireName": "my-other-module",
-        "requireElement": "modules.Module2"
+        "requireElement": "modules.Module2",
         "arguments": [
           { "valueRaw": "DEF" }
         ]
