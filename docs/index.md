@@ -1,30 +1,32 @@
-# Components.js Documentation
+# Introduction
 
-This is the documentation for [Components.js], a semantic dependency injection framework.
+[Components.js] is a [dependency injection] framework for JavaScript applications.
 
-Contribute to this documentation on [GitHub].
+Object-oriented applications are typically composed of hard-wired component.
+For example, when programming a _Car_ instance, several _Seat_ components of a specific type can be inserted.
+When different seats would be required, the source code would have to be changed.
 
-_[This documentation itself is instantiable using Components.js!](./example/)_
+Instead of hard-wiring software components together, _dependency injection_
+allows these seat instances to be defined externally,
+without the programmer having to know the exact component during implementation.
 
-## Introduction
+Components.js is a dependency injection framework that allows components
+to be _instantiated_ and _wired together_ declaratively using _semantic configuration files_.
+The advantage of these semantic configuration files is that software components can be uniquely and globally identified using [URIs].
+Configurations can be written in JSON.
 
-Components.js is a [dependency injection] framework for JavaScript applications.
+This software is aimed at developers who want to build _modular_ and _easily configurable_ and _rewireable_ JavaScript applications.
 
 !!! note
-    Only [Node.js] modules are supported at the moment.
+    More specifically, configuration files are written in [JSON-LD],
+    which is a way to serialize [RDF] in JSON.
+    In fact, [different kinds of RDF serialization can be used](./getting_started/basics/config_serializations/), such as Turtle and TriG.
 
-Instead of hard-wiring software components together, Components.js allows these components to be _instantiated_ and _wired together_ declaratively using _semantic configuration files_.
-The advantage of these semantic configuration files is that software components can be uniquely and globally identified using [URIs].
-
-Configurations can be written in any [RDF] serialization, such as [JSON-LD].
-
-This software is aimed for developers who want to build _modular_ and _easily configurable_ and _rewireable_ JavaScript applications.
-
-## Quick Start
+# Quick Start
 
 Components.js can be installed using npm:
 ```bash
-$ [sudo] npm install componentsjs
+$ npm install componentsjs
 ```
 
 #### 1. Define your module and its components
@@ -101,6 +103,12 @@ Please refer to the remainder of this documentation for more details on each of 
 !!! note
     A full stand-alone version of this [example](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/home/quick_start),
     and all other examples in this documentation be found on a dedicated [GitHub repository](https://github.com/LinkedSoftwareDependencies/Examples-Components.js).
+
+## Source
+
+Contribute to this documentation on [GitHub].
+
+_[This documentation itself is instantiable using Components.js!](./example/)_
 
 [Components.js]: https://github.com/LinkedSoftwareDependencies/Components.js
 [GitHub]: https://github.com/LinkedSoftwareDependencies/Documentation-Components.js

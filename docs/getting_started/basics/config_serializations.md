@@ -1,10 +1,13 @@
 ## Introduction
 
-The examples in this documentation always use [JSON-LD](https://json-ld.org/) for defining module, component and config files.
-However, Components.js works with [RDF](https://www.w3.org/RDF/) data,
-which means that different RDF serializations can be used as well.
+The examples in this documentation always use JSON for defining module, component and config files.
+Components.js internally works with [RDF](https://www.w3.org/RDF/) data,
+which means that any kind of RDF serialization can be used.
 
-We encourage JSON-LD to be used for readability, as the JSON-LD context allows for shortcuts to be defined.
+!!! note
+    Behind the scenes, the JSON files are in fact [JSON-LD](https://json-ld.org/) files containing RDF.
+
+We encourage JSON(-LD) to be used for readability, as the JSON-LD context allows for shortcuts to be defined.
 
 The RDF serializations that are currently supported are JSON-LD, Turtle, TriG, N-Triples and N-Quads.
 
@@ -21,7 +24,7 @@ If other serializations are used, the following vocabularies may be required:
 ## Example: Turtle
 
 For example, this is a simple component definition in Turtle:
-```text
+```
 @prefix oo: <https://linkedsoftwaredependencies.org/vocabularies/object-oriented#>.
 @prefix om: <https://linkedsoftwaredependencies.org/vocabularies/object-mapping#>.
 @prefix doap: <http://usefulinc.com/ns/doap#>.
@@ -37,7 +40,7 @@ For example, this is a simple component definition in Turtle:
 ```
 
 This can be declaratively instantiated as follows:
-```text
+```
 <http://example.org/myInstance> a <http://example.org/MyModule/MyComponent>;
   <http://example.org/MyModule/MyComponent#name> "John".
 ```

@@ -1,6 +1,6 @@
 ## Module
 
-A **module** is a software package containing zero or more **components** equivalent.
+A **module** is a software package containing zero or more **components**.
 This is equivalent to a **Node module** that can export things.
 
 ## Component

@@ -1,7 +1,7 @@
 The most important class that is exposed by Components.js is the `Loader`,
 which essentially does only two things:
 
-1. It accepts module and component registrations
+1. It accepts module and component registrations, so that Components.js knows _how_ to instantiate components.
 2. It instantiates components based on configurations.
 
 There are however different ways to [register](./registration/) modules and their components,

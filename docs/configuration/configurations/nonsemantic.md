@@ -91,7 +91,7 @@ my_module_.modules.Module1(
 ```
 
 !!! note
-    Undefined component instantiations can also be assigned to defined component instantiation parameters,
+    Non-semantic component instantiations can also be assigned to defined component instantiation parameters,
     and the other way around.
 
 [_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/configuration/configurations/undefined)

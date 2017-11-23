@@ -3,7 +3,6 @@ pages:
   - Getting Started:
     - Installation: 'getting_started/installation.md'
     - Basics:
-        - Home: 'getting_started/basics/home.md'
         - Terminology: 'getting_started/basics/terminology.md'
         - Workflow: 'getting_started/basics/workflow.md'
         - Exposing Components: 'getting_started/basics/exposing_components.md'
@@ -20,8 +19,8 @@ pages:
       - Entry Collection: 'configuration/components/entry_collection.md'
     - Configurations:
       - General: 'configuration/configurations/general.md'
-      - Defined: 'configuration/configurations/defined.md'
-      - Undefined: 'configuration/configurations/undefined.md'
+      - Semantic: 'configuration/configurations/semantic.md'
+      - Non-Semantic: 'configuration/configurations/nonsemantic.md'
   - Loading:
     - Loader: 'loading/loader.md'
     - Registration: 'loading/registration.md'
