@@ -22,6 +22,12 @@ This software is aimed at developers who want to build _modular_ and _easily con
     which is a way to serialize [RDF] in JSON.
     In fact, [different kinds of RDF serialization can be used](./getting_started/basics/config_serializations/), such as Turtle and TriG.
 
+The following image shows an overview of how Components.js works in summary.
+Given an application and several external components,
+the application can be instantiated and the components can be dynamically injected using a JSON config file.
+
+![Components.js Overview](example.svg)
+
 # Quick Start
 
 Components.js can be installed using npm:
