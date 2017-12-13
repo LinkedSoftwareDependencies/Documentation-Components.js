@@ -7,7 +7,7 @@ For example, when programming a _Car_ instance, several _Seat_ components of a s
 When different seats would be required, the source code would have to be changed.
 
 Instead of hard-wiring software components together, _dependency injection_
-allows these seat instances to be defined externally,
+allows these components to be defined externally,
 without the programmer having to know the exact component during implementation.
 
 Components.js is a dependency injection framework that allows components
