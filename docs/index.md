@@ -16,6 +16,8 @@ The advantage of these semantic configuration files is that software components 
 Configurations can be written in JSON.
 
 This software is aimed at developers who want to build _modular_ and _easily configurable_ and _rewireable_ JavaScript applications.
+For example, [Comunica](https://github.com/comunica/comunica/) is a meta query engine for the Web that uses Components.js
+to wire modules together in a flexible way to achieve easily configurable query engines.
 
 !!! note
     More specifically, configuration files are written in [JSON-LD],
