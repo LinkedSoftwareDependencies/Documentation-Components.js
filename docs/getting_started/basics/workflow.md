@@ -150,7 +150,7 @@ The parameters that were defined by the component in its config file,
 can now be used as keys in the configuration file.
 
 More details on component instantiation and on how to instantiate classes that have no explicit components file
-can be found [here](../../configuration/configurations/).
+can be found [here](../../configuration/configurations/nonsemantic/).
 
 ### 4. Programatic instantiation
 
