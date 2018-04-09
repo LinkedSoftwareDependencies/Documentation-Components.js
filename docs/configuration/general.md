@@ -33,7 +33,7 @@ such as reasoners, query engines, other dependency injection framework implement
 
 ## Vocabularies
 
-The following vocabularies are (partially) understood by Components.js:
+The following vocabularies are understood by Components.js:
 
 | Prefix | URL |
 |--------|-----|
