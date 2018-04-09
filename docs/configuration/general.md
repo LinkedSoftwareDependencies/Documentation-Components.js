@@ -8,7 +8,15 @@ Components.js uses _semantic configuration files_.
 This means that these files encode their actual meaning by using standard vocabularies
 in order to make these files machine-readable.
 
-Configuration files must be defined in an [RDF](https://www.w3.org/RDF/).
+Configuration files must be defined in an [RDF](https://www.w3.org/RDF/), this has the following advantages:
+
+1. Components and instances are uniquely identifiable (via [URIs](https://www.w3.org/wiki/URI)).
+This makes it possible to for example split up configurations into multiple files, and refer to the same components and instances using their _unique_ URI.
+2. Configuration files are self-descriptive, and not necessarily tied to Components.js.
+For example, RDF-consuming applications can be used to discover the structure of your application and possibly even visualize it, just using your config file.
+3. Alternative implementations of a dependency injection framework for these config files can be created as they are based on external vocabularies,
+possibly even in other programming languages.
+
 Different kinds of RDF serializations exist and are supported by Components.js,
 such as JSON-LD, Turtle, TriG, N-Triples or N-Quads.
 We recommend using JSON-LD, because it is based on JSON and is easily interactable with JavaScript.
