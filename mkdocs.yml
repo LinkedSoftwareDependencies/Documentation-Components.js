@@ -26,6 +26,7 @@ pages:
     - Registration: 'loading/registration.md'
     - Instantiation: 'loading/instantiation.md'
   - Compilation: 'compilation.md'
+  - Comparison: 'comparison.md'
   - Example: 'example.md'
 
 site_name: Components.js Documentation
