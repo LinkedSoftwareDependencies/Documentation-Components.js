@@ -15,6 +15,7 @@ Parameters define what kind of values can be used to instantiate a component wit
 | -------------------- | ----------------------- | ----------------------------------------------- | ----------- |
 | unique               | oo:uniqueValue          | oo:Parameter     → xsd:boolean                  | If set to true, only a single value for the given parameter in a component instance can be set. Default is false. |
 | range                | rdfs:range              | oo:Parameter     → ?                            | Defines the range of a certain parameter, such as `xsd:boolean` or `xsd:string`. |
+| lazy                 | oo:lazyValue          | oo:Parameter     → xsd:boolean                    | If set to true, values will not be passed directly, instead they will be passed lazily by being wrapped inside a `() => Promise<>`. Values can be retrieved by calling `await value()`. Default is false. |
 
 !!! note
     Components.js has the ability to automatically convert specific parameter ranges to certain JavaScript datatypes.
