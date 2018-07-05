@@ -1,12 +1,12 @@
 {
-  "@context": "https://linkedsoftwaredependencies.org/contexts/documentation-components.jsonld",
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/documentation-components/^1.0.0/components/context.jsonld",
   "@id": "npmd:documentation-components",
   "@type": "Module",
   "requireName": "documentation-components",
   "import": [
-    "Page.jsonld",
-    "PageLogger.jsonld",
-    "PageServer.jsonld",
-    "MarkdownPage.jsonld"
+    "files-dc:components/Page.jsonld",
+    "files-dc:components/PageLogger.jsonld",
+    "files-dc:components/PageServer.jsonld",
+    "files-dc:components/MarkdownPage.jsonld"
   ]
 }

@@ -16,7 +16,7 @@ As we only define a module here, no dependency on Components.js needs to be adde
 The contents of a module file looks as follows:
 ```json
 {
-  "@context": "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
   "@id": "http://example.org/MyModule",
   "@type": "Module",
   "requireName": "my-module"
@@ -35,7 +35,7 @@ The contents of a module file looks as follows:
 
         {
           "@context": [
-            "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
+            "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
             { "ex": "http://example.org/" }
           ],
           "@id": "ex:MyModule",
@@ -50,7 +50,7 @@ All available entries of a module can be found [here](../../configuration/module
 #### @id
 
 The `@id` contains the unique URI of your module, which *should* be dereferencable.
-If your module is publicly available on npm, you can use its automatically generated URL `https://linkedsoftwaredependencies.org/bundles/npm/my-module`.
+If your module is publicly available on npm, you can use its automatically generated URL `https://linkedsoftwaredependencies.org/bundles/npm/[my-module]`.
 
 !!! note
     [https://linkedsoftwaredependencies.org/bundles/npm/](https://linkedsoftwaredependencies.org/bundles/npm/) is a semantic mirror of all available packages on npm.
@@ -71,7 +71,7 @@ Following the module from last section, the contents of a components file looks 
 ```json
 {
   "@context": [
-    "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
     { "ex": "http://example.org/" }
   ],
   "@id": "ex:MyModule",
@@ -112,15 +112,27 @@ but when multiple components are available, separate files for each component sh
 When separate component files are created, they must be included in the main module file as follows:
 ```json
 {
-  "@context": "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
   "@id": "http://example.org/MyModule",
   ...
   "import": [
-    "MyComponent.jsonld",
-    "MyOtherComponent.jsonld"
+    "http://example.org/MyModule/MyComponent.jsonld",
+    "http://example.org/MyModule/MyOtherComponent.jsonld"
   ]
 }
 ```
+
+As you can see, these import values are URLs.
+As a best-practise, the contents of this URL should correspond to your file.
+But when you are still developing, this may not be possible yet.
+In this case, you can use the `lsd:importPaths` in your `package.json` file
+to override the URL with a local file path as follows:
+```json
+  "lsd:importPaths": {
+    "http://example.org/MyModule/": "components/",
+  },
+```
+More information on this can be found on page on [exposing components](/getting_started/basics/exposing_components/#advanced-import-overriding).
 
 ### 3. Component configuration file
 
@@ -129,7 +141,7 @@ These can look as follows:
 ```json
 {
   "@context": [
-    "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
     { "ex": "http://example.org/" }
   ],
   "@id": "ex:myInstance",

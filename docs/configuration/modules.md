@@ -11,7 +11,7 @@ Modules can be configured using the following type and predicates:
 | JSON-LD Shortcut     | URI                     | Domain       → Range                        | Description |
 | -------------------- | ----------------------- | ------------------------------------------- | ----------- |
 | components           | oo:component            | oo:Module    → oo:Component                 | Attaches one or more components to a module. |
-| import               | owl:imports             | ?            → xsd:string                   | Includes the target file (local path or URL) in this file. |
+| import               | owl:imports             | ?            → ?                            | Includes the target file (URL) in this file. |
 | requireName          | doap:name               | oo:Module    → xsd:string                   | The name of the npm package as defined in the `package.json` file. |
 | comment              | rdfs:comment            | ?            → xsd:string                   | The comment of a thing. |
 
@@ -20,7 +20,7 @@ Modules can be configured using the following type and predicates:
 A module can be defined as follows:
 ```json
 {
-  "@context": "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
   "@id": "http://example.org/MyModule",
   "@type": "Module",
   "requireName": "my-module",
@@ -29,9 +29,11 @@ A module can be defined as follows:
     ...
   ],
   "import": [
-    "path/to/some/component.jsonld",
-    "other/component/in/another/serialization.ttl",
-    "http://example.org/yet/another/component.jsonld"
+    "http://example.org/path/to/some/component.jsonld",
+    "http://example.org/other/component/in/another/serialization.ttl"
   ]
 }
 ```
+
+!!! note
+    Import sources [can be overriden using the `lsd:importPaths` entry](/getting_started/basics/exposing_components/) in your `package.json` file.

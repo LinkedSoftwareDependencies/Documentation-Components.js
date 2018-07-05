@@ -17,6 +17,10 @@ Components can be configured using the following types and predicates:
 | constructorArguments | oo:constructorArguments | oo:Component     → rdf:list of om:ObjectMapping | Defines the list of constructor arguments of a given component. These arguments must be ObjectMappings. If this is not provided, the parameter values are passed to the constructor as a raw hash. |
 | extends              | rdfs:subClassOf         | oo:Component     → oo:Component                 | Say that a certain component extends from another component, which will inherit all its parameters. |
 | requireElement       | oo:componentPath        | oo:Component     → xsd:string                   | The object path to a module delimited by `.`. For example, the path to element `X` in object `{ a: { b: { X: { ... } } } }` is `a.b.X`. |
+| import               | owl:imports             | ?            → ?                                | Includes the target file (URL) in this file. |
+
+!!! note
+    More information on importing can be found on the [modules configuration page](/configuration/modules/).
 
 ## Example: Abstract Component
 

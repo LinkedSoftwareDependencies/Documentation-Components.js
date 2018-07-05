@@ -43,7 +43,7 @@ $ npm install componentsjs
 ```json
 {
   "@context": [
-    "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
     { "ex": "http://example.org/" }
   ],
   "@id": "ex:MyModule",
@@ -75,7 +75,7 @@ The constructor of `MyComponent` takes a single `name` argument.
 ```json
 {
   "@context": [
-    "https://linkedsoftwaredependencies.org/contexts/components.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
     {
       "ex": "http://example.org/",
       "name": "ex:MyModule/MyComponent#name"

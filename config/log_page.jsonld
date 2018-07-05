@@ -1,5 +1,5 @@
 {
-  "@context": "https://linkedsoftwaredependencies.org/contexts/documentation-components.jsonld",
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/documentation-components/^1.0.0/components/context.jsonld",
   "@id": "urn:components:documentation",
   "@type": "PageLogger",
   "logPage": {
