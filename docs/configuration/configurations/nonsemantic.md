@@ -4,11 +4,12 @@ For this the following predicates can be used:
 
 ## Predicates
 
-| JSON-LD Shortcut     | URI                     | Range         | Description |
-| -------------------- | ----------------------- | ------------- | ----------- |
-| requireName          | doap:name               | xsd:string    | The name of the npm package in which the component that needs instantiation can be found. |
-| requireElement       | oo:componentPath        | xsd:string    | The object path to a component delimited by `.`. For example, the path to element `X` in object `{ a: { b: { X: { ... } } } }` is `a.b.X`. |
-| arguments            | oo:arguments            | rdf:list of om:ObjectMapping | Defines the list of objects that should be used to construct the component. These arguments must be [ObjectMappings](../components/object_mapping/). |
+| JSON-LD Shortcut     | URI                       | Range         | Description |
+| -------------------- | ------------------------- | ------------- | ----------- |
+| requireName          | doap:name                 | xsd:string    | The name of the npm package in which the component that needs instantiation can be found. |
+| requireElement       | oo:componentPath          | xsd:string    | The object path to a component delimited by `.`. For example, the path to element `X` in object `{ a: { b: { X: { ... } } } }` is `a.b.X`. |
+| requireNoConstructor | oo:componentNoConstructor | xsd:boolean   | The component indicated by the current path requires no constructor call. |
+| arguments            | oo:arguments              | rdf:list of om:ObjectMapping | Defines the list of objects that should be used to construct the component. These arguments must be [ObjectMappings](../components/object_mapping/). |
 
 ## Example: Single Argument
 
@@ -25,6 +26,20 @@ Config:
 ```
 
 This will call the constructor `modules.Module1("ABC")` from NPM module `my-module`.
+
+## Example: Single Argument without calling the constructor
+
+Config:
+```json
+{
+  ...
+  "requireName": "my-module",
+  "requireElement": "modules.Module1",
+  "requireNoConstructor": true
+}
+```
+
+This will fetch the field `modules.Module1` from NPM module `my-module`.
 
 ## Example: Complex Arguments
 
