@@ -21,6 +21,7 @@ pages:
       - General: 'configuration/configurations/general.md'
       - Semantic: 'configuration/configurations/semantic.md'
       - Non-Semantic: 'configuration/configurations/nonsemantic.md'
+      - Variables: 'configuration/configurations/variables.md'
   - Loading:
     - Loader: 'loading/loader.md'
     - Registration: 'loading/registration.md'
