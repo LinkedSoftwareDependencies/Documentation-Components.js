@@ -39,6 +39,8 @@ $ npm install componentsjs
 
 #### 1. Define your module and its components
 
+**This step can happen _automatically_ in TypeScript projects using [Components-Generator.js](https://github.com/LinkedSoftwareDependencies/Components-Generator.js)**.
+
 `my-module.jsonld`:
 ```json
 {

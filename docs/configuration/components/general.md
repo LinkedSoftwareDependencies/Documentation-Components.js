@@ -1,3 +1,5 @@
+**Components can be generated _automatically_ in TypeScript projects using [Components-Generator.js](https://github.com/LinkedSoftwareDependencies/Components-Generator.js)**.
+
 Components can be configured using the following types and predicates:
 
 ## Types
