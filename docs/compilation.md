@@ -21,6 +21,9 @@ This will also make running slightly faster.
     This binary accepts additional parameters for configuring things like the main module path and the object that should be exported.
     These parameters and their usage can be found by calling `yarn run componentsjs-compile-config --help`.
 
+!!! note
+    If your application makes use of config variables, it is recommended to enable the `-f` flag to expose your instance as a function that accepts a hash of variables.
+
 # Programmatic compilation
 
 Compilation can also be done via the JavaScript API.
@@ -31,7 +34,7 @@ import {compileConfig} from "componentsjs";
 
 ...
 
-compileConfig({ mainModulePath, scanGlobal }, configPath, configStreamRaw, configResourceUri, exportVariableName)
+compileConfig({ mainModulePath, scanGlobal }, configPath, configStreamRaw, configResourceUri, exportVariableName, asFunction)
     .then(console.log)
     .catch(console.error);
 ```
