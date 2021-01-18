@@ -1,4 +1,4 @@
-The Loader offers three different ways for registering modules and their components:
+The `ComponentsManager` offers three different ways for registering modules and their components:
 
 1. By automatic NPM module scanning
 2. By URL
@@ -18,8 +18,15 @@ The Loader offers three different ways for registering modules and their compone
 
 In most cases, the most convenient way to register modules and components
 is by letting Components.js look for them automatically.
+This is the default mode of operation when creating a `ComponentsManager` when no `moduleLoader` is passed:
 
-This can be done by calling: `await loader.registerAvailableModuleResources()`.
+```javascript
+import { ComponentsManager } from 'componentsjs';
+
+const manager = await ComponentsManager.build({
+  mainModulePath: __dirname, // Path to your npm package's root
+});
+```
 
 By default, Components.js will iterate over the current main module and its NPM dependencies.
 It will look for an `lsd:components` entry in each `package.json` file, which is the [standard way of exposing components](../basics/exposing_components/).
@@ -29,43 +36,34 @@ Example `package.json` contents:
 ```json
 {
   ...
-  "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/my-plugin",
-  "lsd:components": "components/components.jsonld",
-  "lsd:contexts": {
-    "http://example.org/mycontext.jsonld": "components/context.jsonld"
-  },
+  "lsd:module": true,
   ...
 }
 ```
-
-The promise will resolve when all dependencies have been scanned,
-and all registrations of those that had an `lsd:components` entry are finished.
-
-!!! note
-    If the [`scanGlobal` option](./loader/#loader-options) is enabled in the Loader,
-    all [globally installed NPM modules](https://docs.npmjs.com/getting-started/installing-npm-packages-globally) are iterated as well.
 
 !!! note
     When many dependencies are installed, scanning can introduce a noticable overhead.
     So when this overhead becomes a problem, one of the other registration methods should be used.
 
-    This overhead will increase when `scanGlobal` is enabled.
-
 ## Registering by URL
 
 A more hands-on way of registering modules and components is by registering them from a certain URL or path.
+For this, you can override the `moduleLoader` callback when building your `ComponentsManager`.
 
-This can be done by calling: `await loader.registerModuleResourcesUrl('http://example.org/my/module.jsonld')`
-or `await loader.registerModuleResourcesUrl('path/to/my/module.jsonld')`.
+For example:
+```javascript
+const manager = await ComponentsManager.build({
+  mainModulePath: __dirname, // Path to your npm package's root
+  moduleLoader: async(registry) => {
+	await registry.registerModule('http://example.org/my/module.jsonld');
+	await registry.registerModule('path/to/my/module.jsonld');
+  },
+});
+```
 
-This method will read the file at the given path and register all the modules and their components it can find into the Loader.
+This method will read the file at the given path and register all the modules and their components it can find into the `ComponentsManager`.
 
 The promise will resolve when the file has been read and all discovered modules have been fully registered.
-
-!!! note
-    `registerModuleResourcesUrl` accepts an optional second `fromPath` parameter,
-    which allows you to configure the path the importing should happen relative this.
-    This is useful when you want to simulate importing from a different directory.
 
 !!! note
     JSON-LD files are not a requirement, other RDF serializations can also be interpreted automatically as mentioned [here](../getting_started/basics/config_serializations).
@@ -74,15 +72,20 @@ The promise will resolve when the file has been read and all discovered modules 
 
 A more advanced way of registering modules is by registering them using a triple stream.
 
-This can be done by calling: `await loader.registerModuleResourcesStream(myTripleStream)`.
+For example:
+```javascript
+const manager = await ComponentsManager.build({
+  mainModulePath: __dirname, // Path to your npm package's root
+  moduleLoader: async(registry) => {
+	await registry.registerModuleStream(myTripleStream);
+  },
+});
+```
 
 This stream should contain triples using the appropriate [module and component vocabularies](../configuration/components/general/).
-The triples in this stream must be defined using [triple representation from N3.js](https://www.npmjs.com/package/n3#triple-representation).
-All discovered modules and components will be registered into the Loader.
+The triples in this stream must be defined using [quad representation from RDF/JS](http://rdf.js.org/data-model-spec/#quad-interface).
+All discovered modules and components will be registered into the `ComponentsManager`.
 
 The promise will resolve when the stream has been fully consumed and all discovered modules have been fully registered.
-
-!!! note
-    In the future, triples will be accepted according to the [RDFJS specification](https://github.com/rdfjs/representation-task-force/blob/master/interface-spec.md#triple).
 
 [_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/loading/registration)

@@ -10,9 +10,59 @@ The other components, i.e. plugins, only need to expose their component files.
 
 ## Package.json discovery
 
-Components.js can automatically discover components if they are defined in the `package.json` file of npm modules.
-The URI of the module and a link to its module file needs to be defined.
+Components.js can automatically discover components in packages if their `package.json` contains an `"lsd:module": true` entry.
+
 For example:
+```json
+{
+  "lsd:module": true,
+  ...
+}
+```
+
+By enabling this flag, this module will
+* receive a module identifier in the form of `https://linkedsoftwaredependencies.org/bundles/npm/my-plugin`;
+* expose its components if `components/components.jsonld` exists;
+* expose its context if `components/context.json` exists;
+* expose its components and config folder if `components/` or `config/` exist.
+
+For instance, the `"lsd:module": true` is typically equivalent to:
+```json
+{
+  "name": "my-plugin",
+  ...
+  "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/my-plugin",
+  "lsd:components": "components/components.jsonld",
+  "lsd:contexts": {
+    "http://example.org/mycontext.jsonld": "components/context.jsonld"
+  },
+  "lsd:importPaths": {
+    "http://example.org/myconfig.jsonld": "config/myconfig.jsonld",
+    "http://example.org/otherconfigs/": "config/otherconfigs/",
+  },
+  ...
+}
+```
+
+`"lsd:module": true` can be considered a convenience flag if the default settings above are sufficient for your project.
+If you however want to adapt any of the above default entries,
+you can make use of the more advanced options below.
+
+### Advanced: Custom module URL
+
+The URL of your module can be defined using `"lsd:module"`:
+```json
+{
+  "name": "my-plugin",
+  ...
+  "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/my-plugin",
+  ...
+}
+```
+
+### Advanced: Exposing components
+
+Exposing the modules file of your package can be done using `"lsd:components"`:
 ```json
 {
   "name": "my-plugin",

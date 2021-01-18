@@ -1,6 +1,6 @@
 ## Overview
 
-In order to inject dependencies with Components.js, several elements are required:
+In order to inject dependencies with Components.js in non-TypeScript projects, several elements are required:
 
 1. Module file
 2. Component file
@@ -16,7 +16,7 @@ As we only define a module here, no dependency on Components.js needs to be adde
 The contents of a module file looks as follows:
 ```json
 {
-  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld",
   "@id": "http://example.org/MyModule",
   "@type": "Module",
   "requireName": "my-module"
@@ -35,7 +35,7 @@ The contents of a module file looks as follows:
 
         {
           "@context": [
-            "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
+            "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld",
             { "ex": "http://example.org/" }
           ],
           "@id": "ex:MyModule",
@@ -71,7 +71,7 @@ Following the module from last section, the contents of a components file looks 
 ```json
 {
   "@context": [
-    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld",
     { "ex": "http://example.org/" }
   ],
   "@id": "ex:MyModule",
@@ -112,7 +112,7 @@ but when multiple components are available, separate files for each component sh
 When separate component files are created, they must be included in the main module file as follows:
 ```json
 {
-  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld",
   "@id": "http://example.org/MyModule",
   ...
   "import": [
@@ -141,7 +141,7 @@ These can look as follows:
 ```json
 {
   "@context": [
-    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld",
     { "ex": "http://example.org/" }
   ],
   "@id": "ex:myInstance",
@@ -174,39 +174,33 @@ Components.js must be installed as a dependency.
 !!! note
     The npm package name of Components.js is `componentsjs`.
 
-Components.js exposes a `Loader` module, which is responsible for loading modules, components and instantiating them.
-A new loader instance is simply created as follows:
+Components.js exposes a `ComponentsManager` module, which is responsible for loading modules, components and instantiating them.
+A new components manager instance is simply created as follows:
 ```javascript
-const Loader = require('componentsjs').Loader;
-const loader = new Loader();
+import { ComponentsManager } from 'componentsjs';
+
+const manager = await ComponentsManager.build({
+  mainModulePath: __dirname, // Path to your npm package's root
+  moduleLoader: (registry) => registry.registerModule('path/or/url/to/my-module.jsonld'),
+});
 ```
 
-The loader accept module and component registrations.
-For instance, a modules file can be registered, which will also automatically register all discoverable attached components:
-```javascript
-await loader.registerModuleResourcesUrl('path/or/url/to/my-module.jsonld');
-```
-
+The invocation of `registry.registerModule` will register our module and all discoverable attached components.
 All other available registration methods can be found at [here](../../loading/registration/).
 
-!!! note
-    `loader.registerModuleResourcesUrl`, like most other loader methods, return [promises](https://developers.google.com/web/fundamentals/primers/promises).
-    In this case, the promise resolves when registration of the module and its components has finished.
+In order to instantiate a component,
+we must first register its declarative config file:
 
-!!! note
-        In this example, we are using the ES7 `await` keyword.
-        Instead, the old `.then()` and `.catch()` methods of promises can be used as well.
-
-After the module and its components have been registered into the loader,
-our component config file —which contains a declarative component instantiation—
-can be instantiated programmatically:
 ```javascript
-const myComponent = await loader.instantiateFromUrl(
-    'http://example.org/myInstance', 'path/or/url/to/config-my-component.jsonld');
+await manager.configRegistry.register('path/or/url/to/config-my-component.jsonld');
 ```
 
-The `instantiateFromUrl` method takes as first argument the URI (`@id`) of a component configuration,
-and as second argument a file or URL on which the given component configuration is defined.
+Next, we create an actual instantiation of our declarative config instance:
+```javascript
+const myInstance = await manager.instantiate('http://example.org/myInstance');
+```
+
+The `instantiate` method takes as first argument the IRI (`@id`) of a component configuration.
 This method resolves to an instance of the given component, as it has been instantiated according to the config file.
 In this example, the `MyComponent` constructor as exported by `my-module` will be called with single argument `"John"`.
 

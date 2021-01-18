@@ -1,16 +1,39 @@
-The Loader offers two different ways for instantiating components:
+## Config Registration
 
-1. Instantiate by URL
-2. Instantiate by triple stream
+Before an instance can be created, we must first register a config file,
+which contains the declarative representation of our instance.
 
-## Instantiate by URL
+This can be done in two ways:
+
+### Invoking the config registry directly
+
+After your `ComponentsManager`, you can register any number of configs via its `configRegistry`:
+```javascript
+await manager.configRegistry.register('path/or/url/to/config.jsonld');
+```
+
+### Registering config during components manager building
+
+If you want to register configs during the build phase of your `ComponentsManager`,
+you can do this via the `configLoader` callback:
+```javascript
+const manager = await ComponentsManager.build({
+  mainModulePath: __dirname, // Path to your npm package's root
+  configLoader: (registry) => registry.register('path/or/url/to/config-my-component.jsonld'),
+});
+```
+
+Similar to [registration by triple stream](../registration/#registering-by-triple-stream),
+components can also be instantiated by triple stream using the `registerStream` method.
+
+## Instantiation
 
 The easiest way to instantiate a component is by invoking a component configuration by URL or path.
 
-This can be done by calling: `await loader.instantiateFromUrl('http://example.org/MyInstance', 'http://example.org/my/config.jsonld')`.
+This can be done by calling: `await manager.instantiate('http://example.org/myInstance')`.
 This returns a promise that resolves to the newly constructed instance.
 
-This will for example instantiate the configuration at `http://example.org/my/config.jsonld` containing:
+For example, our registered config file could have contained:
 ```json
 {
   "@id": "http://example.org/myInstance",
@@ -20,13 +43,7 @@ This will for example instantiate the configuration at `http://example.org/my/co
 ```
 This requires the component `http://example.org/MyComponent` to be [registered](../registration/) via its module.
 
-This method takes the URI of the configuration to instantiate as first parameter, and the URL or path at which it is defined as second parameter.
+The `instantiate` method takes the IRI of the configuration to instantiate as first parameter (`@id`).
 Note that the referenced components must be [registered](../registration/) before, otherwise the promise will reject with an error.
-
-## Instantiate by triple stream
-
-Similar to [registration by triple stream](../registration/#registering-by-triple-stream), components can also be instantiated by triple stream.
-
-This can be done by calling: `await loader.getConfigConstructorFromStream('http://example.org/MyInstance', myTripleStream)`.
 
 [_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/loading/instantiation)

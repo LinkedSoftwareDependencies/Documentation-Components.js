@@ -9,7 +9,7 @@ which means that any kind of RDF serialization can be used.
 
 We encourage JSON(-LD) to be used for readability, as the JSON-LD context allows for shortcuts to be defined.
 
-The RDF serializations that are currently supported are JSON-LD, Turtle, TriG, N-Triples and N-Quads.
+The RDF serializations that are currently supported are all those supported by [`rdf-parse`](https://github.com/rubensworks/rdf-parse.js).
 
 More information on configurations can be found [here](../../configuration/general/).
 

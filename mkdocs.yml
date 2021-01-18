@@ -4,7 +4,8 @@ pages:
     - Installation: 'getting_started/installation.md'
     - Basics:
         - Terminology: 'getting_started/basics/terminology.md'
-        - Workflow: 'getting_started/basics/workflow.md'
+        - Workflow TypeScript: 'getting_started/basics/workflow_ts.md'
+        - Workflow JavaScript: 'getting_started/basics/workflow_js.md'
         - Exposing Components: 'getting_started/basics/exposing_components.md'
         - Config Serializations: 'getting_started/basics/config_serializations.md'
   - Configuration:
@@ -23,7 +24,7 @@ pages:
       - Non-Semantic: 'configuration/configurations/nonsemantic.md'
       - Variables: 'configuration/configurations/variables.md'
   - Loading:
-    - Loader: 'loading/loader.md'
+    - ComponentsManager: 'loading/manager.md'
     - Registration: 'loading/registration.md'
     - Instantiation: 'loading/instantiation.md'
   - Compilation: 'compilation.md'

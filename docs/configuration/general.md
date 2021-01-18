@@ -53,6 +53,6 @@ The following vocabularies are understood by Components.js:
 | owl    | http://www.w3.org/2002/07/owl# |
 | xsd    | http://www.w3.org/2001/XMLSchema# |
 
-If the JSON-LD serialization is used, shortcuts can be used for most of the URLs using Components.js's context: [https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld](https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld)
+If the JSON-LD serialization is used, shortcuts can be used for most of the URLs using Components.js's context: [https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld](https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld)
 
 These vocabularies will be referenced by their prefix and JSON-LD shortcut in the following sections.

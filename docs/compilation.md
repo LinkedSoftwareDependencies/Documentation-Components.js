@@ -30,13 +30,13 @@ Compilation can also be done via the JavaScript API.
 For this, the asynchronous `compileConfig` function can be used as follows:
 
 ```javascript
-import {compileConfig} from "componentsjs";
+import { compileConfig } from "componentsjs";
 
 ...
 
-compileConfig({ mainModulePath, scanGlobal }, configPath, configStreamRaw, configResourceUri, exportVariableName, asFunction)
+compileConfig(mainModulePath, configPath, configIri)
     .then(console.log)
     .catch(console.error);
 ```
 
-[Documentation on the available parameters](https://github.com/LinkedSoftwareDependencies/Components.js/blob/master/lib/CompileUtil.ts#L5-L15).
+[Documentation on the available parameters](https://github.com/LinkedSoftwareDependencies/Components.js/blob/master/lib/util/CompileUtil.ts#L4-L14).
