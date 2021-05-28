@@ -46,16 +46,27 @@ $ npm install -D componentsjs-generator
 
 #### 2. Mark your package as a Components.js module
 
-This will allow Components.js to find your module(s) when they are included from other packages.
-
 `package.json`:
 ```json
 {
   "name": "my-package",
   "version": "2.3.4",
-  "lsd:module": true
+  "lsd:module": true,
+  ...
+  "scripts": {
+    ...
+    "build": "npm run build:ts && npm run build:components",
+    "build:ts": "tsc",
+    "build:components": "componentsjs-generator --typeScopedContexts",
+    "prepare": "npm run build",
+    ...
+  }
 }
 ```
+
+`"lsd:module"` will allow Components.js to find your module(s) when they are included from other packages.
+
+The `"scripts"` entry will make sure that all required component files will be generated when building your package.
 
 #### 3. Create a configuration file to instantiate our class
 
@@ -74,14 +85,11 @@ export class MyClass {
 {
   "@context": [
     "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld",
-    {
-      "ex": "http://example.org/",
-      "name": "ex:MyPackage/MyClass#name"
-    }
+    "https://linkedsoftwaredependencies.org/bundles/npm/my-package/^2.0.0/components/context.jsonld"
   ],
-  "@id": "http://example.org/myInstance",
+  "@id": "urn:my-package:myInstance",
   "@type": "MyClass",
-  "MyClass:_name": "John"
+  "name": "John"
 }
 ```
 
@@ -97,7 +105,7 @@ const manager = await ComponentsManager.build({
   mainModulePath: __dirname, // Path to your npm package's root
 });
 await manager.configRegistry.register('config.jsonld');
-const myInstance = await manager.instantiate('http://example.org/myInstance');
+const myInstance = await manager.instantiate('urn:my-package:myInstance');
 ...
 ```
 
