@@ -32,6 +32,7 @@ Parameters define what kind of values can be used to instantiate a component wit
     | `xsd:float` | `float` |
     | `xsd:decimal` | `float` |
     | `xsd:double` | `float` |
+    | `rdf:JSON` | `object` (requires values to be annotated with `"@type": "@json"`, will be auto-generated with Components-Generator.js) |
     | All others | `string` |
 
 ## Example: boolean parameter
@@ -49,3 +50,54 @@ Parameters define what kind of values can be used to instantiate a component wit
 ```
 
 [_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/configuration/components/parameters)
+
+## Example: JSON parameter
+
+`MyModule/MyComponent#MyParam` is a parameter that accepts unique JSON values.
+
+```json
+{
+  ...
+  "@id": "ex:MyModule/MyComponent#MyParam",
+  "comment": "Some parameter that only accepts JSON values",
+  "unique": true,
+  "range": "rdf:JSON"
+}
+```
+
+The JSON value passed to this parameter will be passed directly as a parsed JSON object into the constructor.
+
+!!! note
+    This JSON functionality requires values to the annotated with `"@type": "@json"`.
+    When using Components-Generator.js, this `@type` will be set automatically behind the scenes using the generated context.
+
+When instantiating MyComponent as follows, its JSON value will be passed directly into the constructor:
+```json
+{
+  "@id": "ex:myInstance",
+  "@type": "ex:MyModule/MyComponent",
+  "ex:MyModule/MyComponent#MyParam": {
+    "someKey": {
+      "someOtherKey1": 1,
+      "someOtherKey2": "abc"
+    }  
+  }
+}
+```
+
+When not using a context, such as the one generated with Components-Generator.js, the `@type` must be set explicitly.
+```json
+{
+  "@id": "ex:myInstance",
+  "@type": "ex:MyModule/MyComponent",
+  "ex:MyModule/MyComponent#MyParam": {
+    "@type": "@json",
+    "@value": {
+      "someKey": {
+        "someOtherKey1": 1,
+        "someOtherKey2": "abc"
+      }  
+    }
+  }
+}
+```
