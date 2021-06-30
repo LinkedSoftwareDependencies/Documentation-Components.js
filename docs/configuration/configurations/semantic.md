@@ -98,3 +98,53 @@ For `ex:MyModule/MyComponent#param2`, instead of creating a new instantiation, i
     For example, a component instance can have a reference to itself in one of its parameters, or its children.
 
 [_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/configuration/configurations/defined)
+
+## Example: Passing empty arrays
+
+In some cases, you may want to pass an empty array to a non-unique parameter.
+Since all parameters support passing RDF lists via the `@list` keyword,
+this functionality can be used to pass a strict empty list.
+
+For example, assuming a component `ex:MyModule/MyComponent1` defines the following parameter:
+```json
+{
+  ...
+  "@id": "ex:MyModule/MyComponent1",
+  "parameters": [
+    {
+      "@id": "ex:MyModule/MyComponent1#param1"
+    }
+  ],
+  ...
+}
+```
+
+The following instantiation (i.e. config) can be defined:
+```json
+{
+  ...
+  "@type": "ex:MyModule/MyComponent1",
+  "ex:MyModule/MyComponent1#param1": {
+    "@list": []
+  },
+}
+```
+
+And when using [the components generator](https://github.com/LinkedSoftwareDependencies/Components-Generator.js), the following instantiation (i.e. config) can be defined:
+```json
+{
+  ...
+  "@type": "MyComponent1",
+  "param1": [],
+}
+```
+
+Both of these will lead to an instantiation of `ex:MyModule/MyComponent1`
+with the following parameter mapping:
+
+| Parameter                        | Value          |
+| -------------------------------- | -------------- |
+| `ex:MyModule/MyComponent#param1` | `[]` |
+
+!!! note
+    When using [the generator](https://github.com/LinkedSoftwareDependencies/Components-Generator.js), non-unique parameters will automatically marked as `@list` behind the scenes, which allows you to pass things such as `"param1": []` directly from within the config.
