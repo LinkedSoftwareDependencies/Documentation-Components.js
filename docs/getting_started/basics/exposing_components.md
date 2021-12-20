@@ -21,6 +21,7 @@ For example:
 ```
 
 By enabling this flag, this module will
+
 * receive a module identifier in the form of `https://linkedsoftwaredependencies.org/bundles/npm/my-plugin`;
 * expose its components if `components/components.jsonld` exists;
 * expose its context if `components/context.json` exists;
