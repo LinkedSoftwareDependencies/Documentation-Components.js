@@ -41,9 +41,9 @@ For example, our registered config file could have contained:
   "ex:MyModule/MyComponent#name": "John"
 }
 ```
-This requires the component `http://example.org/MyComponent` to be [registered](../registration/) via its module.
+This requires the component `http://example.org/MyComponent` to be [registered](./registration/) via its module.
 
 The `instantiate` method takes the IRI of the configuration to instantiate as first parameter (`@id`).
-Note that the referenced components must be [registered](../registration/) before, otherwise the promise will reject with an error.
+Note that the referenced components must be [registered](./registration/) before, otherwise the promise will reject with an error.
 
 [_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/loading/instantiation)
