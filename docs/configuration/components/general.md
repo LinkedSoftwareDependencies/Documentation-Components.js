@@ -4,12 +4,14 @@ Components can be configured using the following types and predicates:
 
 ## Types
 
-| JSON-LD Shortcut | URI                  | Description |
-| ---------------- | -------------------- | ----------- |
-| /                | oo:Component         | A component. This should not be used directly as a type, instead, oo:Class, oo:AbstractClass or oo:ComponentInstance should be used. |
-| Class            | oo:Class             | An oo:Component that refers to a JavaScript class and is instantiatable. |
-| AbstractClass    | oo:AbstractClass     | An oo:Component that refers to an abstract JavaScript class and is not directly instantiatable. |
-| Instance         | oo:ComponentInstance | An oo:Component that already is an instance and needs no further instantiation. |
+| JSON-LD Shortcut          | URI                          | Description |
+| ------------------------- | ---------------------------- | ----------- |
+| /                         | oo:Component                 | A component. This should not be used directly as a type, instead, oo:Class, oo:AbstractClass or oo:ComponentInstance should be used. |
+| Class                     | oo:Class                     | An oo:Component that refers to a JavaScript class and is instantiatable. |
+| AbstractClass             | oo:AbstractClass             | An oo:Component that refers to an abstract JavaScript class and is not directly instantiatable. |
+| Instance                  | oo:ComponentInstance         | An oo:Component that already is an instance and needs no further instantiation. |
+| GenericTypeParameter      | oo:GenericTypeParameter      | A generic type parameter |
+| GenericComponentExtension | oo:GenericComponentExtension | A resource that can be used in the extends clause of a component to refer to a generic component (`oo:component`) with generic type instances (`oo:genericTypeInstance`) |
 
 ## Predicates
 
@@ -138,3 +140,26 @@ MyComponentRaw({
 ```
 
 [_Example Source_](https://github.com/LinkedSoftwareDependencies/Examples-Components.js/tree/master/documentation/configuration/components/general)
+
+## Example: Generic Component Extension
+
+`MyModule/MyComponent` is a component that extends the generic component `MyModule/MyGenericComponent` that has two generic type,
+and instantiates it with `string` and `boolean`.
+
+```json
+{
+  ...
+  "@id": "ex:MyModule/MyComponent",
+  "@type": "Class",
+  "extends": {
+    "@type": "GenericComponentExtension",
+    "component": "ex:MyModule/MyGenericComponent",
+    "genericTypeInstances": [ "xsd:string", "xsd:boolean" ]
+  },
+  "requireElement": "path.to.MyComponent",
+  "comment": "This is an instantiatable component.",
+  "parameters": [
+    { ... }
+  ]
+}
+```

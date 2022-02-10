@@ -14,6 +14,7 @@ pages:
     - Components:
       - General: 'configuration/components/general.md'
       - Parameters: 'configuration/components/parameters.md'
+      - Parameter Ranges: 'configuration/components/parameter_ranges.md'
       - Default Values: 'configuration/components/default_values.md'
       - Inherited Values: 'configuration/components/inherited_values.md'
       - Object Mapping: 'configuration/components/object_mapping.md'

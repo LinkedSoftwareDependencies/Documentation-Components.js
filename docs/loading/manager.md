@@ -48,3 +48,5 @@ This hash accepts the following optional entries:
 | `dumpErrorState`          | If the error state should be dumped into `componentsjs-error-state.json` after failed instantiations. | `true` |
 | `logLevel`                | The logging level. | `warn` |
 | `moduleState`             | The module state. | A newly created instances on the `mainModulePath`. |
+| `skipContextValidation`   | If JSON-LD context validation should be skipped. | `true` |
+| `typeChecking`            | If values for parameters should be type-checked. | `true` |
