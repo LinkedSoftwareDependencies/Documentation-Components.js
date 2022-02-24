@@ -62,6 +62,7 @@ Call `componentsjs-generator` as a npm script by adding a `scripts` entry to you
 
 This is only a _recommended_ way of calling `componentsjs-generator`,
 you are free to call it in a different way that better suits your pipeline.
+Note that `componentsjs-generator` expects that the components are located inside a `components/` folder.
 
 Please refer to the README of [`componentsjs-generator`](https://github.com/LinkedSoftwareDependencies/Components-Generator.js)
 for more details on how to change the default options of this tool.
