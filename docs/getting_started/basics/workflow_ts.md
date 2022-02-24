@@ -13,7 +13,7 @@ These will be explained in detail in the following sections.
 
 ### 1. Setup module and component generation
 
-Using the [`componentsjs-generator`](https://raw.githubusercontent.com/LinkedSoftwareDependencies/Components-Generator.js) tool,
+Using the [`componentsjs-generator`](https://github.com/LinkedSoftwareDependencies/Components-Generator.js) tool,
 our declarative components from our TypeScript classes.
 
 **1. Install as a dev dependency**
@@ -63,7 +63,7 @@ Call `componentsjs-generator` as a npm script by adding a `scripts` entry to you
 This is only a _recommended_ way of calling `componentsjs-generator`,
 you are free to call it in a different way that better suits your pipeline.
 
-Please refer to the README of [`componentsjs-generator`](https://raw.githubusercontent.com/LinkedSoftwareDependencies/Components-Generator.js)
+Please refer to the README of [`componentsjs-generator`](https://github.com/LinkedSoftwareDependencies/Components-Generator.js)
 for more details on how to change the default options of this tool.
 
 **4. _(optional)_ Ignore generated components files**
