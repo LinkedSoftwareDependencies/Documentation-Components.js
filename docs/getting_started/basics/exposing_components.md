@@ -22,7 +22,7 @@ For example:
 
 By enabling this flag, this module will
 
-* receive a module identifier in the form of `https://linkedsoftwaredependencies.org/bundles/npm/my-plugin`;
+* receive a module identifier in the form of `https://linkedsoftwaredependencies.org/bundles/npm/my-plugin`; (`my-plugin` is your package `name`)
 * expose its components if `components/components.jsonld` exists;
 * expose its context if `components/context.json` exists;
 * expose its components and config folder if `components/` or `config/` exist.
@@ -48,6 +48,13 @@ For instance, the `"lsd:module": true` is typically equivalent to:
 `"lsd:module": true` can be considered a convenience flag if the default settings above are sufficient for your project.
 If you however want to adapt any of the above default entries,
 you can make use of the more advanced options below.
+
+### Advanced: Using a new plugin
+
+Project A uses components.js but some functionality is missing or lacking. Creating a Library that implements an interface or extends a class from Project A is an easy way to fix it's shortcomings.
+
+To use this new functionality a new config is required. After copying an existing config it's time to add the new class where needed, also add the Library's context to the config file, something like `https://linkedsoftwaredependencies.org/bundles/npm/my-plugin/^1.0.0/components/context.jsonld`.
+Project A needs the new Library as dependency so the new component is found by compenents.js.
 
 ### Advanced: Custom module URL
 
