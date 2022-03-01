@@ -16,7 +16,7 @@ As we only define a module here, no dependency on Components.js needs to be adde
 The contents of a module file looks as follows:
 ```json
 {
-  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld",
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^5.0.0/components/context.jsonld",
   "@id": "http://example.org/MyModule",
   "@type": "Module",
   "requireName": "my-module"
@@ -35,7 +35,7 @@ The contents of a module file looks as follows:
 
         {
           "@context": [
-            "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld",
+            "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^5.0.0/components/context.jsonld",
             { "ex": "http://example.org/" }
           ],
           "@id": "ex:MyModule",
@@ -71,7 +71,7 @@ Following the module from last section, the contents of a components file looks 
 ```json
 {
   "@context": [
-    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^5.0.0/components/context.jsonld",
     { "ex": "http://example.org/" }
   ],
   "@id": "ex:MyModule",
@@ -112,7 +112,7 @@ but when multiple components are available, separate files for each component sh
 When separate component files are created, they must be included in the main module file as follows:
 ```json
 {
-  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld",
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^5.0.0/components/context.jsonld",
   "@id": "http://example.org/MyModule",
   ...
   "import": [
@@ -141,7 +141,7 @@ These can look as follows:
 ```json
 {
   "@context": [
-    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^5.0.0/components/context.jsonld",
     { "ex": "http://example.org/" }
   ],
   "@id": "ex:myInstance",

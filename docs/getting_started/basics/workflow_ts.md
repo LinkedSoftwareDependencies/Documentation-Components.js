@@ -98,7 +98,7 @@ These can look as follows:
 ```json
 {
   "@context": [
-    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^4.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^5.0.0/components/context.jsonld",
     { "ex": "http://example.org/" }
   ],
   "@id": "ex:myInstance",
