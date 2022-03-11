@@ -8,6 +8,7 @@ pages:
         - Workflow JavaScript: 'getting_started/basics/workflow_js.md'
         - Exposing Components: 'getting_started/basics/exposing_components.md'
         - Config Serializations: 'getting_started/basics/config_serializations.md'
+        - Context lookup: 'getting_started/basics/contexts.md'
   - Configuration:
     - General: 'configuration/general.md'
     - Modules: 'configuration/modules.md'
