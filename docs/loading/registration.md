@@ -29,7 +29,7 @@ const manager = await ComponentsManager.build({
 ```
 
 By default, Components.js will iterate over the current main module and its NPM dependencies.
-It will look for an `lsd:components` entry in each `package.json` file, which is the [standard way of exposing components](../basics/exposing_components/).
+It will look for an `lsd:components` entry in each `package.json` file, which is the [standard way of exposing components](../getting_started/basics/exposing_components/).
 If such an entry is found, the referenced modules and components are registered to the Loader.
 Example `package.json` contents:
 
