@@ -95,6 +95,10 @@ export class MyClass {
 
 This configuration is a semantic representation of the instantiation of `MyClass` with `name` set to `"John"`.
 
+!!! note
+    If you want to import a context within your config file, it is important to always refer to the major version range of a package.
+    For example, if your package is at version 2.3.4, then the context URL must become `https://linkedsoftwaredependencies.org/bundles/npm/my-package/^2.0.0/components/context.jsonld`.
+
 #### 4. Instantiate from config file
 
 ```javascript

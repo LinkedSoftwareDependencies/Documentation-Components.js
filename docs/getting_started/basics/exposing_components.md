@@ -99,6 +99,10 @@ which allows this context to be dereferenced locally:
     For example, the latest context file of Components.js is available at `https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/*/components/context.jsonld`.
     In that case, you are encouraged to use these URLs as keys `lsd:contexts`.
 
+!!! note
+    If you want to import a context within your config file, it is important to always refer to the major version range of a package.
+    For example, if your package is at version 2.3.4, then the context URL must become `https://linkedsoftwaredependencies.org/bundles/npm/[packagename]/^2.0.0/components/context.jsonld`.
+
 ### Advanced: Import overriding
 
 Similar to context file overriding, import paths can also be overridden.
