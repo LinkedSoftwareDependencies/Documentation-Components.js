@@ -25,6 +25,7 @@ pages:
       - Semantic: 'configuration/configurations/semantic.md'
       - Non-Semantic: 'configuration/configurations/nonsemantic.md'
       - Variables: 'configuration/configurations/variables.md'
+      - Overrides: 'configuration/configurations/overrides.md'
   - Loading:
     - ComponentsManager: 'loading/manager.md'
     - Registration: 'loading/registration.md'
