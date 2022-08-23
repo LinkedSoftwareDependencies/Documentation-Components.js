@@ -20,7 +20,19 @@ These are the predicates
 
 ## Example: single override
 
-The example below will make it so that `ex:myHelloWorldWithOverride` will be instantiated with the value `"HELLO"`
+Assume we have the following in our original configuration:
+
+```json
+{
+  "@id": "ex:myHelloWorldWithOverride",
+  "@type": "hello:HelloWorld",
+  "hello:say": "HI",
+  "hello:hello": "WORLD",
+  "hello:punctuation": "!"
+}
+```
+
+Importing the config below will make it so that `ex:myHelloWorldWithOverride` will be instantiated with the value `"HELLO"`
 for its `hello:say` parameter and `"BETTER WORLD"` for its `hello:hello` parameter, 
 independent of what value is specified in the `ex:myHelloWorldWithOverride` instantiation.
 
