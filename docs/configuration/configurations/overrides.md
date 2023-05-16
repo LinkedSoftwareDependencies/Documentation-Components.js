@@ -3,6 +3,9 @@ Overrides can be used to update the values found in the configuration.
 This can be useful if you import a configuration in which you want to make minor changes
 but don't want to edit the original configuration.
 
+In case you override the type of the target instance,
+all of its original parameter values will be removed as they would no longer be consistent with the new type.
+
 ## Types
 
 | JSON-LD Shortcut | URI         | Description                                         |
@@ -66,6 +69,26 @@ Parameters that are not referenced, remain unchanged, so `hello:say` will still 
   "overrideInstance": { "@id": "ex:myObjectOverride" },
   "overrideParameters": {
     "hello:hello": "EVEN BETTER WORLD"
+  }
+}
+```
+
+## Example: overriding the type
+
+The following example overrides the type of the target instance.
+This will remove all the original parameters of `ex:myHelloWorldWithOverride`.
+In this case, this means that this will result in `ex:myHelloWorldWithOverride`
+being an instance of `ex:GreetingsWorld` with only 1 parameter: `greetings:say`.
+The values for `hello:say`, `hello:hello`, and `hello:punctuation` will be gone.
+
+```json
+{
+  "@id": "ex:myObjectOverride",
+  "@type": "Override",
+  "overrideInstance": { "@id": "ex:myHelloWorldWithOverride" },
+  "overrideParameters": {
+    "@type": "ex:GreetingsWorld",
+    "greetings:say": "GREETINGS WORLD!"
   }
 }
 ```
