@@ -20,7 +20,7 @@ Modules can be configured using the following type and predicates:
 A module can be defined as follows:
 ```json
 {
-  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^5.0.0/components/context.jsonld",
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^6.0.0/components/context.jsonld",
   "@id": "http://example.org/MyModule",
   "@type": "Module",
   "requireName": "my-module",
